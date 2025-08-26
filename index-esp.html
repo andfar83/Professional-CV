@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CV – Andrés Felipe Ávila Rincón</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Andrés Felipe Ávila Rincón — Técnico en IT, desarrollo web, multimedia y herramientas de IA. Proyectos front-end/back-end, reparación de hardware, bases de datos y producción creativa.">
+  <!-- Theme color for Android status & address bar -->
+  <meta name="theme-color" content="#007acc" />
+  <meta name="msapplication-navbutton-color" content="#007acc" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f9fafc;
+      color: #333;
+      padding: 2rem;
+      line-height: 1.55;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      position: relative;
+      border-radius: 8px;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    .name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.25rem;
+      color: #222;
+      line-height: 1.2;
+    }
+
+    .contact {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .contact a {
+      color: #007acc;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+
+    .contact a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 2rem;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #222;
+    }
+
+    .list {
+      list-style: none;
+    }
+
+    .list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .link-list a {
+      display: inline-block;
+      margin-right: 1rem;
+      font-weight: 600;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .link-list a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+    /* Language Switcher (top-right) */
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      --switch-w: 60px;
+      --switch-h: 28px;
+      --knob: 22px;
+      --pad: 3px;
+    }
+
+    .lang-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: relative;
+      display: inline-block;
+      width: var(--switch-w);
+      height: var(--switch-h);
+      background: #007acc;
+      border-radius: var(--switch-h);
+      cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+
+    /* Knob (default = left for English) */
+    .slider::before {
+      content: "";
+      position: absolute;
+      height: var(--knob);
+      width: var(--knob);
+      left: var(--pad);
+      bottom: var(--pad);
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.35s;
+      will-change: transform;
+    }
+
+    /* Edge labels */
+    .slider .en,
+    .slider .es {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      font-size: 12px;
+      color: #ffffff;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      letter-spacing: 0.3px;
+    }
+
+    /* EN on the left, ES on the right */
+    .slider .en {
+      left: 8px;
+      opacity: 1;
+    }
+
+    .slider .es {
+      right: 8px;
+      opacity: 0.5;
+    }
+
+    /* Checked (Spanish): knob moves right; highlight ES, dim EN */
+    input:checked+.slider {
+      background: #005fa3;
+    }
+
+    input:checked+.slider::before {
+      transform: translateX(calc(var(--switch-w) - var(--knob) - 2 * var(--pad)));
+    }
+
+    input:checked+.slider .en {
+      opacity: 0.5;
+    }
+
+    input:checked+.slider .es {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .name {
+        font-size: 2rem;
+      }
+
+      .lang-switch {
+        --switch-w: 52px;
+        --switch-h: 24px;
+        --knob: 18px;
+      }
+
+      .slider .en,
+      .slider .es {
+        font-size: 10px;
+      }
+    }
+
+    /* Print styles for clean PDF export */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .lang-switch {
+        display: none !important;
+      }
+
+      a,
+      a:visited {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .section h2 {
+        border-bottom: 1px solid #000;
+      }
+    }
+
+    /* Experience layout helpers */
+    .job {
+      margin-bottom: 1rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: 700;
+    }
+
+    .job-org {
+      color: #444;
+    }
+
+    .job-dates {
+      color: #666;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    .job-desc {
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Conmutador de idioma -->
+    <label class="lang-switch" aria-label="Change language">
+      <input type="checkbox" id="langToggle" role="switch" aria-checked="false" />
+      <span class="slider" aria-hidden="true">
+        <span class="en">EN</span>
+        <span class="es">ES</span>
+      </span>
+    </label>
+
+
+    <!-- Encabezado -->
+    <header>
+      <h1 class="name">Andrés Felipe Ávila Rincón</h1>
+      <p class="contact">
+        Ibagué, Colombia •
+        <a href="mailto:andresfar83@outlook.com">andresfar83@outlook.com</a> •
+        <a href="tel:+573117672595">+57 311 767 2595</a> •
+        <a href="https://www.linkedin.com/in/andres-avila-239900324" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </header>
+
+    <!-- Perfil -->
+    <section class="section">
+      <h2>Perfil Profesional</h2>
+      <p>Técnico y desarrollador con experiencia en reparación de hardware, desarrollo web, bases de datos y producción
+        multimedia. Acostumbrado a resolver problemas, colaborar en entornos digitales y aportar a proyectos
+        tecnológicos, programación y contenido audiovisual con herramientas modernas y de IA.</p>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="section">
+      <h2>Habilidades Técnicas</h2>
+      <ul class="list">
+        <li><strong>Hardware:</strong> Reparación y mantenimiento de PC y portátiles; resolución de problemas IT.</li>
+        <li><strong>Desarrollo Web:</strong> HTML, CSS, JavaScript (React, Bootstrap), PHP, MySQL, scripts en Python.
+        </li>
+        <li><strong>Bases de Datos:</strong> MySQL (fundamentos y práctica).</li>
+        <li><strong>Gráfico y Multimedia:</strong> Photoshop, Illustrator, Canva; Lightroom; Audacity, iZotope; DaVinci
+          Resolve, CapCut, Sony Vegas.</li>
+        <li><strong>Herramientas de IA:</strong> ChatGPT, DALL·E y otras de generación de contenido.</li>
+      </ul>
+    </section>
+
+    <!-- Experiencia -->
+    <section class="section">
+      <h2>Experiencia Laboral</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Desarrollador Front-end / Back-end (Proyectos Personales)</span>
+            <span class="job-org"> — Autodirigido</span>
+          </div>
+          <span class="job-dates">2023 – Actualidad</span>
+        </div>
+        <p class="job-desc">Creación de PWAs, juegos y sitios con HTML/CSS/JS, Java, PHP, MySQL, Python y herramientas
+          de IA.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Asistente de Audio, Video e Iluminación</span>
+            <span class="job-org"> — OSSA STUDIO</span>
+          </div>
+          <span class="job-dates">2020 – Actualidad</span>
+        </div>
+        <p class="job-desc">Pre-edición, grabaciones, asistencia en set, cableado e iluminación.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Operaciones (Servicios de Limpieza)</span>
+            <span class="job-org"> — exec.com & Handy.com</span>
+          </div>
+          <span class="job-dates">2013 – 2019</span>
+        </div>
+        <p class="job-desc">Capacitación de personal y prestación de servicios residenciales y comerciales.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Soporte Técnico</span>
+            <span class="job-org"> — Dell Computer (Charlotte, NC)</span>
+          </div>
+          <span class="job-dates">2008 – 2012</span>
+        </div>
+        <p class="job-desc">Atención de garantías y soporte al cliente para productos Dell.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Diseño Web</span>
+            <span class="job-org"> — Freelance</span>
+          </div>
+          <span class="job-dates">2005 – 2007</span>
+        </div>
+        <p class="job-desc">Sitios corporativos y personales con Wix, Photoshop e Illustrator.</p>
+      </div>
+    </section>
+
+    <!-- Educación -->
+    <section class="section">
+      <h2>Educación</h2>
+      <ul class="list">
+        <li>Bachiller — Externado Popular, Ibagué <strong>(1999)</strong></li>
+        <li>Charlotte Community College — Inglés Básico <strong>(2005)</strong></li>
+        <li>Instituto AB Tech (Asheville, NC) — Dreamweaver, InDesign, Photoshop <strong>(2008)</strong></li>
+        <li>San Francisco Community College — Inglés Intermedio-Avanzado <strong>(2015)</strong></li>
+      </ul>
+
+      <div class="section" style="margin-top:1rem;">
+        <h2 style="border-bottom:none; padding-bottom:0;">Aprendizaje Continuo (2024–2025)</h2>
+        <ul class="list">
+          <li>Fundamentos de IA <strong>(Otoño 2024)</strong> — Certificado</li>
+          <li>Introducción a la Programación, Lógica y Ética Computacional <strong>(Primavera/Verano 2024)</strong></li>
+          <li>Programación en Python y Bases de Datos I <strong>(Primavera 2025)</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Idiomas -->
+    <section class="section">
+      <h2>Idiomas</h2>
+      <p><strong>Español:</strong> Nativo • <strong>Inglés:</strong> Intermedio-avanzado (lectura y escritura técnica)
+      </p>
+    </section>
+
+    <!-- Portafolio y Enlaces -->
+    <section class="section">
+      <h2>Portafolio y Enlaces</h2>
+      <div class="link-list">
+        <a href="https://github.com/andfar83" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.behance.net/andresfe" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.linkedin.com/in/andres-avila-239900324" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="http://www.andfar83.com" target="_blank" rel="noopener">Sitio Personal</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById('langToggle');
+      if (!toggle) return;
+
+      // Detect current language from the HTML tag
+      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      const isSpanishDoc = htmlLang.startsWith('es');
+      const isEnglishDoc = htmlLang.startsWith('en');
+
+      // localStorage helpers with guard (some Android WebViews block it on file://)
+      const storage = {
+        get(key) {
+          try { return window.localStorage.getItem(key); } catch { return null; }
+        },
+        set(key, val) {
+          try { window.localStorage.setItem(key, val); } catch { }
+        }
+      };
+
+      // Initialize toggle state from storage, else from the actual page lang
+      const saved = storage.get('lang');
+      const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
+      toggle.checked = wantSpanish;
+      toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
+
+      // If a pref exists but doesn't match this page, redirect to the counterpart
+      if (saved) {
+        const targetName = saved === 'es' ? 'index-esp.html' : 'index-eng.html';
+        if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
+          // Build robust path: keep current directory, swap filename
+          const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+          location.href = base + targetName;
+          return;
+        }
+      }
+
+      // On change, persist and go to the other file (keeping directory)
+      toggle.addEventListener('change', () => {
+        const lang = toggle.checked ? 'es' : 'en';
+        toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+        storage.set('lang', lang);
+
+        const targetName = lang === 'es' ? 'index-esp.html' : 'index-eng.html';
+        const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+        location.href = base + targetName;
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
