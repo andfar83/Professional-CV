@@ -303,9 +303,10 @@
     <section class="section">
       <h2>Objetivo</h2>
       <p>
-        Aplicar tecnologías modernas y IA para optimizar la entrega y calidad de servicios IT, mantenimiento y creación
-        de contenido digital, y para impulsar proyectos de innovación, campañas de comunicación y formación digital en
-        entornos corporativos, educativos y de salud.
+        Aplicar tecnologías modernas e inteligencia artificial para optimizar operaciones, mejorar la calidad de los
+        servicios de TI y optimizar la creación de contenido digital. Liderar proyectos de innovación, ejecutar campañas
+        de comunicación efectivas y ofrecer programas de capacitación digital de alto impacto en entornos corporativos,
+        educativos y de salud.
       </p>
     </section>
 
@@ -343,7 +344,8 @@
         </li>
         <li>
           <strong>Soporte Técnico — Dell Computer, Charlotte, NC (2008–2012):</strong>
-          Atención de garantías y soporte técnico; organización de cableado y mantenimiento preventivo en estaciones de trabajo.
+          Atención de garantías y soporte técnico; organización de cableado y mantenimiento preventivo en estaciones de
+          trabajo.
         </li>
       </ul>
     </section>
@@ -379,56 +381,57 @@
     </section>
   </div> -->
 
-  <script>
-    (function () {
-      const toggle = document.getElementById('langToggle');
-      if (!toggle) return;
+    <script>
+      (function () {
+        const toggle = document.getElementById('langToggle');
+        if (!toggle) return;
 
-      // Detect current language from the HTML tag
-      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-      const isSpanishDoc = htmlLang.startsWith('es');
-      const isEnglishDoc = htmlLang.startsWith('en');
+        // Detect current language from the HTML tag
+        const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+        const isSpanishDoc = htmlLang.startsWith('es');
+        const isEnglishDoc = htmlLang.startsWith('en');
 
-      // localStorage helpers with guard (some Android WebViews block it on file://)
-      const storage = {
-        get(key) {
-          try { return window.localStorage.getItem(key); } catch { return null; }
-        },
-        set(key, val) {
-          try { window.localStorage.setItem(key, val); } catch { }
+        // localStorage helpers with guard (some Android WebViews block it on file://)
+        const storage = {
+          get(key) {
+            try { return window.localStorage.getItem(key); } catch { return null; }
+          },
+          set(key, val) {
+            try { window.localStorage.setItem(key, val); } catch { }
+          }
+        };
+
+        // Initialize toggle state from storage, else from the actual page lang
+        const saved = storage.get('lang');
+        const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
+        toggle.checked = wantSpanish;
+        toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
+
+        // If a pref exists but doesn't match this page, redirect to the counterpart
+        if (saved) {
+          const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
+          if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
+            // Build robust path: keep current directory, swap filename
+            const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+            location.href = base + targetName;
+            return;
+          }
         }
-      };
 
-      // Initialize toggle state from storage, else from the actual page lang
-      const saved = storage.get('lang');
-      const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
-      toggle.checked = wantSpanish;
-      toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
+        // On change, persist and go to the other file (keeping directory)
+        toggle.addEventListener('change', () => {
+          const lang = toggle.checked ? 'es' : 'en';
+          toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+          storage.set('lang', lang);
 
-      // If a pref exists but doesn't match this page, redirect to the counterpart
-      if (saved) {
-        const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
-        if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
-          // Build robust path: keep current directory, swap filename
+          const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
           const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
           location.href = base + targetName;
-          return;
-        }
-      }
-
-      // On change, persist and go to the other file (keeping directory)
-      toggle.addEventListener('change', () => {
-        const lang = toggle.checked ? 'es' : 'en';
-        toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
-        storage.set('lang', lang);
-
-        const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
-        const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
-        location.href = base + targetName;
-      });
-    })();
-  </script>
+        });
+      })();
+    </script>
 
 </body>
 
 </html>
+
