@@ -313,7 +313,8 @@
       <p class="contact">
         Ibagué, Colombia •
         <a href="mailto:andresfar83@outlook.com">andresfar83@outlook.com</a> •
-        <a href="tel:+573117672595">+57 311 767 2595</a>
+        <a href="tel:+573117672595">+57 311 767 2595</a> •
+        Willing to travel: Yes
       </p>
     </header>
 
@@ -352,7 +353,8 @@
         <li><strong>Web Development & Programming:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; dynamic
           websites and interactive applications; CMS/frameworks (WordPress, Webflow).</li>
         <li><strong>Graphic Design & UX/UI:</strong> Clean, user-friendly interfaces; proficient with
-          <strong>Photoshop</strong>, <strong>Illustrator</strong>, and <strong>InDesign</strong>.</li>
+          <strong>Photoshop</strong>, <strong>Illustrator</strong>, and <strong>InDesign</strong>.
+        </li>
         <li><strong>Databases & Backend:</strong> Database modeling and administration; <strong>API</strong> integration
           and custom management systems.</li>
         <li><strong>AI & Automation:</strong> Solutions using <strong>ChatGPT</strong>, <strong>DALL·E</strong>, and
@@ -380,7 +382,8 @@
         </p>
         <ul class="list">
           <li>Built <strong>PWA</strong> apps for local businesses, integrating <strong>frontend</strong> and
-            <strong>backend</strong>.</li>
+            <strong>backend</strong>.
+          </li>
           <li>Designed digital platforms with <strong>databases</strong> and administration panels.</li>
           <li>Automated tasks with <strong>Python</strong> and <strong>JavaScript</strong> to improve efficiency.</li>
         </ul>
@@ -429,51 +432,51 @@
   </div>
 
   <script>
-  (function () {
-    const toggle = document.getElementById('langToggle');
-    if (!toggle) return;
+    (function () {
+      const toggle = document.getElementById('langToggle');
+      if (!toggle) return;
 
-    // Detect current document language
-    const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-    const isSpanishDoc = htmlLang.startsWith('es');
-    const isEnglishDoc = htmlLang.startsWith('en');
+      // Detect current document language
+      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      const isSpanishDoc = htmlLang.startsWith('es');
+      const isEnglishDoc = htmlLang.startsWith('en');
 
-    // localStorage helpers with guard
-    const storage = {
-      get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
-      set(key, val) { try { window.localStorage.setItem(key, val); } catch {} }
-    };
+      // localStorage helpers with guard
+      const storage = {
+        get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
+        set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
+      };
 
-    // Load preference
-    const saved = storage.get('lang');
-    const initialLang = saved || (isSpanishDoc ? 'es' : 'en');
+      // Load preference
+      const saved = storage.get('lang');
+      const initialLang = saved || (isSpanishDoc ? 'es' : 'en');
 
-    // Sync toggle with initial language
-    toggle.checked = initialLang === 'es';
-    toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+      // Sync toggle with initial language
+      toggle.checked = initialLang === 'es';
+      toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
 
-    // If stored pref mismatches this page, redirect
-    if (saved) {
-      const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
-      if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
+      // If stored pref mismatches this page, redirect
+      if (saved) {
+        const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
+        if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
+          const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+          location.href = base + targetName;
+          return;
+        }
+      }
+
+      // Handle toggle changes
+      toggle.addEventListener('change', () => {
+        const lang = toggle.checked ? 'es' : 'en';
+        toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+        storage.set('lang', lang);
+
+        const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
         const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
         location.href = base + targetName;
-        return;
-      }
-    }
-
-    // Handle toggle changes
-    toggle.addEventListener('change', () => {
-      const lang = toggle.checked ? 'es' : 'en';
-      toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
-      storage.set('lang', lang);
-
-      const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
-      const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
-      location.href = base + targetName;
-    });
-  })();
-</script>
+      });
+    })();
+  </script>
 
 </body>
 
