@@ -2,20 +2,20 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>CV – Andrés Felipe Ávila Rincón</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Andrés Felipe Ávila Rincón — Soporte IT, desarrollo web, diseño gráfico y herramientas de IA. Proyectos front-end/back-end, bases de datos y soluciones digitales." />
-
+    content="Andrés Felipe Ávila Rincón — Técnico en IT, desarrollo web, multimedia y herramientas de IA. Proyectos front-end/back-end, reparación de hardware, bases de datos y producción creativa.">
   <!-- Theme color for Android status & address bar -->
   <meta name="theme-color" content="#007acc" />
   <meta name="msapplication-navbutton-color" content="#007acc" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet">
 
   <style>
     * {
@@ -37,7 +37,7 @@
       margin: auto;
       background: #fff;
       padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       position: relative;
       border-radius: 8px;
     }
@@ -49,13 +49,13 @@
     .name {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
-      margin-bottom: .25rem;
+      margin-bottom: 0.25rem;
       color: #222;
       line-height: 1.2;
     }
 
     .contact {
-      font-size: .95rem;
+      font-size: 0.95rem;
       color: #555;
     }
 
@@ -76,7 +76,7 @@
 
     .section h2 {
       border-bottom: 2px solid #007acc;
-      padding-bottom: .3rem;
+      padding-bottom: 0.3rem;
       margin-bottom: 1rem;
       font-size: 1.4rem;
       color: #222;
@@ -87,7 +87,20 @@
     }
 
     .list li {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .link-list a {
+      display: inline-block;
+      margin-right: 1rem;
+      font-weight: 600;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .link-list a:hover {
+      color: #005fa3;
+      text-decoration: underline;
     }
 
     /* Language Switcher (top-right) */
@@ -115,10 +128,11 @@
       background: #007acc;
       border-radius: var(--switch-h);
       cursor: pointer;
-      transition: background .3s;
+      transition: background 0.3s;
       user-select: none;
     }
 
+    /* Knob (default = left for English) */
     .slider::before {
       content: "";
       position: absolute;
@@ -128,10 +142,11 @@
       bottom: var(--pad);
       background: #fff;
       border-radius: 50%;
-      transition: transform .35s;
+      transition: transform 0.35s;
       will-change: transform;
     }
 
+    /* Edge labels */
     .slider .en,
     .slider .es {
       position: absolute;
@@ -139,12 +154,13 @@
       transform: translateY(-50%);
       font-weight: 700;
       font-size: 12px;
-      color: #fff;
-      transition: opacity .3s;
+      color: #ffffff;
+      transition: opacity 0.3s;
       pointer-events: none;
-      letter-spacing: .3px;
+      letter-spacing: 0.3px;
     }
 
+    /* EN on the left, ES on the right */
     .slider .en {
       left: 8px;
       opacity: 1;
@@ -152,9 +168,10 @@
 
     .slider .es {
       right: 8px;
-      opacity: .5;
+      opacity: 0.5;
     }
 
+    /* Checked (Spanish): knob moves right; highlight ES, dim EN */
     input:checked+.slider {
       background: #005fa3;
     }
@@ -164,42 +181,11 @@
     }
 
     input:checked+.slider .en {
-      opacity: .5;
+      opacity: 0.5;
     }
 
     input:checked+.slider .es {
       opacity: 1;
-    }
-
-    /* Experience helpers */
-    .job {
-      margin-bottom: 1rem;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .job-title {
-      font-weight: 700;
-    }
-
-    .job-org {
-      color: #444;
-    }
-
-    .job-dates {
-      color: #666;
-      font-style: italic;
-      font-size: .95rem;
-    }
-
-    .job-desc {
-      margin-top: .25rem;
     }
 
     @media (max-width: 600px) {
@@ -219,7 +205,7 @@
       }
     }
 
-    /* Print styles */
+    /* Print styles for clean PDF export */
     @media print {
       body {
         background: #fff;
@@ -245,6 +231,37 @@
       .section h2 {
         border-bottom: 1px solid #000;
       }
+    }
+
+    /* Experience layout helpers */
+    .job {
+      margin-bottom: 1rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: 700;
+    }
+
+    .job-org {
+      color: #444;
+    }
+
+    .job-dates {
+      color: #666;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    .job-desc {
+      margin-top: 0.25rem;
     }
   </style>
 </head>
@@ -274,13 +291,7 @@
     <section class="section">
       <h2>Perfil Profesional</h2>
       <p>
-        Especialista en <strong>Soporte Técnico</strong>, <strong>desarrollo web</strong> y <strong>diseño gráfico</strong>,
-        con trayectoria en la administración y mantenimiento de sistemas, creación de aplicaciones digitales y gestión
-        de bases de datos. Mi experiencia de más de <strong>XX años en Estados Unidos</strong> respalda mi nivel
-        <strong>bilingüe (Español–Inglés C2)</strong>, lo que me permite desenvolverme en entornos multiculturales y
-        globales. Me destaco por integrar <strong>inteligencia artificial</strong> y <strong>tecnologías
-          emergentes</strong> en proyectos que optimizan procesos, fortalecen la comunicación y ofrecen soluciones
-        innovadoras y efectivas.
+        Especialista en <strong>Soporte IT</strong>, <strong>desarrollo web</strong> y <strong>diseño gráfico</strong>, con trayectoria en la administración y mantenimiento de sistemas, creación de aplicaciones digitales y gestión de bases de datos. Mi experiencia de más de <strong>XX años en Estados Unidos</strong> respalda mi nivel <strong>bilingüe (Español–Inglés C2)</strong>, lo que me permite desenvolverme en entornos multiculturales y globales. Me destaco por integrar <strong>inteligencia artificial</strong> y <strong>tecnologías emergentes</strong> en proyectos que optimizan procesos, fortalecen la comunicación y ofrecen soluciones innovadoras y efectivas.
       </p>
     </section>
 
@@ -288,11 +299,7 @@
     <section class="section">
       <h2>Objetivo</h2>
       <p>
-        Consolidar mi carrera en <strong>Soporte Técnico</strong> y <strong>desarrollo web</strong>, aplicando habilidades en
-        <strong>programación</strong>, <strong>diseño digital</strong> y <strong>herramientas de AI</strong> para
-        generar soluciones prácticas y de alto impacto. Busco aportar en organizaciones que valoren la
-        <strong>innovación</strong>, la <strong>eficiencia</strong> y el <strong>trabajo en equipo</strong>,
-        aprovechando mi capacidad bilingüe y experiencia internacional.
+        Consolidar mi carrera en <strong>Soporte IT</strong> y <strong>desarrollo web</strong>, aplicando habilidades en <strong>programación</strong>, <strong>diseño digital</strong> y <strong>herramientas de AI</strong> para generar soluciones prácticas y de alto impacto. Busco aportar en organizaciones que valoren la <strong>innovación</strong>, la <strong>eficiencia</strong> y el <strong>trabajo en equipo</strong>, aprovechando mi capacidad bilingüe y experiencia internacional.
       </p>
     </section>
 
@@ -300,19 +307,12 @@
     <section class="section">
       <h2>Habilidades Técnicas</h2>
       <ul class="list">
-        <li><strong>Soporte Técnico y Hardware:</strong> Instalación, diagnóstico y mantenimiento de equipos de cómputo;
-          gestión de redes y cableado estructurado; resolución de incidentes técnicos.</li>
-        <li><strong>Desarrollo Web y Programación:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; creación de
-          sitios dinámicos y aplicaciones interactivas; CMS y frameworks (WordPress, Webflow).</li>
-        <li><strong>Diseño Gráfico y UX/UI:</strong> Interfaces limpias y usables; dominio de
-          <strong>Photoshop</strong>, <strong>Illustrator</strong> e <strong>InDesign</strong>.</li>
-        <li><strong>Bases de Datos y Backend:</strong> Modelado y administración de bases de datos; integración de
-          <strong>APIs</strong> y sistemas de gestión a medida.</li>
-        <li><strong>AI y Automatización:</strong> Soluciones con <strong>ChatGPT</strong>, <strong>DALL·E</strong> y
-          otras herramientas de <strong>inteligencia artificial</strong> para generación de contenido y optimización de
-          flujos.</li>
-        <li><strong>Productividad y Colaboración:</strong> GitHub, Trello, VS Code; gestión de proyectos y trabajo
-          remoto multidisciplinario.</li>
+        <li><strong>Soporte IT y Hardware:</strong> Instalación, diagnóstico y mantenimiento de equipos de cómputo; gestión de redes y cableado estructurado; resolución de incidentes técnicos.</li>
+        <li><strong>Desarrollo Web y Programación:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; creación de sitios dinámicos y aplicaciones interactivas; CMS y frameworks (WordPress, Webflow).</li>
+        <li><strong>Diseño Gráfico y UX/UI:</strong> Interfaces limpias y usables; dominio de <strong>Photoshop</strong>, <strong>Illustrator</strong> e <strong>InDesign</strong>.</li>
+        <li><strong>Bases de Datos y Backend:</strong> Modelado y administración de bases de datos; integración de <strong>APIs</strong> y sistemas de gestión a medida.</li>
+        <li><strong>AI y Automatización:</strong> Soluciones con <strong>ChatGPT</strong>, <strong>DALL·E</strong> y otras herramientas de <strong>inteligencia artificial</strong> para generación de contenido y optimización de flujos.</li>
+        <li><strong>Productividad y Colaboración:</strong> GitHub, Trello, VS Code; gestión de proyectos y trabajo remoto multidisciplinario.</li>
       </ul>
     </section>
 
@@ -329,15 +329,12 @@
           <span class="job-dates">2023–Actualidad</span>
         </div>
         <p class="job-desc">
-          Diseño y programación de <strong>aplicaciones web</strong> con integración de <strong>sistemas de
-            gestión</strong> y optimización de procesos.
+          Diseño y programación de <strong>aplicaciones web</strong> con integración de <strong>sistemas de gestión</strong> y optimización de procesos.
         </p>
         <ul class="list">
-          <li>Desarrollo de <strong>PWA</strong> para negocios locales, integrando <strong>frontend</strong> y
-            <strong>backend</strong>.</li>
+          <li>Desarrollo de <strong>PWA</strong> para negocios locales, integrando <strong>frontend</strong> y <strong>backend</strong>.</li>
           <li>Diseño de plataformas digitales con <strong>bases de datos</strong> y paneles de administración.</li>
-          <li>Automatización de tareas con <strong>Python</strong> y <strong>JavaScript</strong> para mejorar la
-            eficiencia.</li>
+          <li>Automatización de tareas con <strong>Python</strong> y <strong>JavaScript</strong> para mejorar la eficiencia.</li>
         </ul>
       </div>
 
@@ -350,14 +347,11 @@
           <span class="job-dates">2008–2012</span>
         </div>
         <p class="job-desc">
-          Atención técnica a clientes corporativos y particulares, gestionando reparaciones, garantías y mantenimiento
-          de equipos.
+          Atención técnica a clientes corporativos y particulares, gestionando reparaciones, garantías y mantenimiento de equipos.
         </p>
         <ul class="list">
-          <li>Resolución de incidencias en <strong>hardware</strong> y <strong>software</strong> con altos niveles de
-            satisfacción.</li>
-          <li>Implementación de <strong>cableado estructurado</strong> y mantenimiento de estaciones de trabajo en
-            entornos corporativos.</li>
+          <li>Resolución de incidencias en <strong>hardware</strong> y <strong>software</strong> con altos niveles de satisfacción.</li>
+          <li>Implementación de <strong>cableado estructurado</strong> y mantenimiento de estaciones de trabajo en entornos corporativos.</li>
         </ul>
       </div>
     </section>
@@ -366,8 +360,7 @@
     <section class="section">
       <h2>Educación</h2>
       <ul class="list">
-        <li><strong>Aprendizaje Continuo (2024–2025):</strong> Fundamentos de IA; Introducción a Programación y Bases de
-          Datos.</li>
+        <li><strong>Aprendizaje Continuo (2024–2025):</strong> Fundamentos de IA; Introducción a Programación y Bases de Datos.</li>
         <li><strong>San Francisco Community College (2015):</strong> Inglés Intermedio–Avanzado.</li>
         <li><strong>Instituto AB Tech, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
         <li><strong>Charlotte Community College (2005):</strong> Inglés Básico.</li>
@@ -378,50 +371,77 @@
     <!-- Idiomas -->
     <section class="section">
       <h2>Idiomas</h2>
-      <p><strong>Español:</strong> Nativo • <strong>Inglés:</strong> C2 (avalado por <strong>XX+ años de residencia en
-          EE.UU.</strong>)</p>
+      <p><strong>Español:</strong> Nativo • <strong>Inglés:</strong> C2 (avalado por <strong>XX+ años de residencia en EE.UU.</strong>)</p>
     </section>
   </div>
 
-  <script>
-    (function () {
-      const toggle = document.getElementById('langToggle');
-      if (!toggle) return;
+    <!-- Portafolio y Enlaces
+    <section class="section">
+      <h2>Portafolio y Enlaces</h2>
+      <div class="link-list">
+        <a href="https://github.com/andfar83" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.behance.net/andresfe" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.linkedin.com/in/andres-avila-239900324" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="http://www.andfar83.com" target="_blank" rel="noopener">Sitio Personal</a>
+      </div>
+    </section>
+  </div> -->
 
-      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-      const isSpanishDoc = htmlLang.startsWith('es');
-      const isEnglishDoc = htmlLang.startsWith('en');
+    <script>
+      (function () {
+        const toggle = document.getElementById('langToggle');
+        if (!toggle) return;
 
-      const storage = {
-        get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
-        set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
-      };
+        // Detect current language from the HTML tag
+        const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+        const isSpanishDoc = htmlLang.startsWith('es');
+        const isEnglishDoc = htmlLang.startsWith('en');
 
-      const saved = storage.get('lang');
-      const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
-      toggle.checked = wantSpanish;
-      toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
+        // localStorage helpers with guard (some Android WebViews block it on file://)
+        const storage = {
+          get(key) {
+            try { return window.localStorage.getItem(key); } catch { return null; }
+          },
+          set(key, val) {
+            try { window.localStorage.setItem(key, val); } catch { }
+          }
+        };
 
-      if (saved) {
-        const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
-        if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
+        // Initialize toggle state from storage, else from the actual page lang
+        const saved = storage.get('lang');
+        const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
+        toggle.checked = wantSpanish;
+        toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
+
+        // If a pref exists but doesn't match this page, redirect to the counterpart
+        if (saved) {
+          const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
+          if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
+            // Build robust path: keep current directory, swap filename
+            const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+            location.href = base + targetName;
+            return;
+          }
+        }
+
+        // On change, persist and go to the other file (keeping directory)
+        toggle.addEventListener('change', () => {
+          const lang = toggle.checked ? 'es' : 'en';
+          toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+          storage.set('lang', lang);
+
+          const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
           const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
           location.href = base + targetName;
-          return;
-        }
-      }
+        });
+      })();
+    </script>
 
-      toggle.addEventListener('change', () => {
-        const lang = toggle.checked ? 'es' : 'en';
-        toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
-        storage.set('lang', lang);
-
-        const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
-        const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
-        location.href = base + targetName;
-      });
-    })();
-  </script>
 </body>
 
 </html>
+
+
+
+
+
