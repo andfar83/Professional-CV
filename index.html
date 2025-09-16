@@ -6,7 +6,7 @@
   <title>CV – Andrés Felipe Ávila Rincón</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Andrés Felipe Ávila Rincón — Soporte IT, desarrollo web, diseño gráfico y herramientas de IA." />
+    content="Andrés Felipe Ávila Rincón — Soporte Técnico, desarrollo web, diseño gráfico y herramientas de IA." />
   <meta name="theme-color" content="#007acc" />
   <meta name="msapplication-navbutton-color" content="#007acc" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -434,44 +434,52 @@
   </div>
 
   <script>
-    (function () {
-      const toggle = document.getElementById('langToggle');
-      if (!toggle) return;
+  (function () {
+    const toggle = document.getElementById('langToggle');
+    if (!toggle) return;
 
-      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-      const isSpanishDoc = htmlLang.startsWith('es');
-      const isEnglishDoc = htmlLang.startsWith('en');
+    // Detect current document language
+    const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+    const isSpanishDoc = htmlLang.startsWith('es');
+    const isEnglishDoc = htmlLang.startsWith('en');
 
-      const storage = {
-        get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
-        set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
-      };
+    // localStorage helpers with guard
+    const storage = {
+      get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
+      set(key, val) { try { window.localStorage.setItem(key, val); } catch {} }
+    };
 
-      const saved = storage.get('lang');
-      const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
-      toggle.checked = wantSpanish;
-      toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
+    // Load preference
+    const saved = storage.get('lang');
+    const initialLang = saved || (isSpanishDoc ? 'es' : 'en');
 
-      if (saved) {
-        const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
-        if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
-          const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
-          location.href = base + targetName;
-          return;
-        }
-      }
+    // Sync toggle with initial language
+    toggle.checked = initialLang === 'es';
+    toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
 
-      toggle.addEventListener('change', () => {
-        const lang = toggle.checked ? 'es' : 'en';
-        toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
-        storage.set('lang', lang);
-
-        const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
+    // If stored pref mismatches this page, redirect
+    if (saved) {
+      const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
+      if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
         const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
         location.href = base + targetName;
-      });
-    })();
-  </script>
+        return;
+      }
+    }
+
+    // Handle toggle changes
+    toggle.addEventListener('change', () => {
+      const lang = toggle.checked ? 'es' : 'en';
+      toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+      storage.set('lang', lang);
+
+      const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
+      const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+      location.href = base + targetName;
+    });
+  })();
+</script>
+
 </body>
 
 </html>
