@@ -354,7 +354,6 @@
       </p>
     </section>
 
-
     <!-- Habilidades Técnicas -->
     <section class="section">
       <h2>Habilidades Técnicas</h2>
@@ -454,7 +453,8 @@
     <section class="section">
       <h2>Educación</h2>
       <ul class="list">
-        <li><strong>AB Tech Institute, Asheville, NC (2024–2025):</strong> IA aplicada, fundamentos de programación y bases de
+        <li><strong>AB Tech Institute, Asheville, NC (2024–2025):</strong> IA aplicada, fundamentos de programación y
+          bases de
           datos.</li>
         <li><strong>San Francisco Community College (2015):</strong> Inglés intermedio-avanzado.</li>
         <li><strong>AB Tech Institute, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
@@ -472,23 +472,23 @@
 
   <script>
     function downloadCertificates() {
-  const files = [
-    { href: 'certificado-1.png', name: 'Certificado-1.png' },
-    { href: 'certificado-2.png', name: 'Certificado-2.png' }
-  ];
-  // Trigger both downloads with slight delay
-  files.forEach((f, i) => {
-    setTimeout(() => {
-      const a = document.createElement('a');
-      a.href = f.href;              // file path (relative to your HTML)
-      a.setAttribute('download', f.name);
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    }, i * 250); // small delay so browsers don’t block multiple downloads
-  });
-}
-    
+      const files = [
+        { href: 'certificado-1.png', name: 'Certificado-1.png' },
+        { href: 'certificado-2.png', name: 'Certificado-2.png' }
+      ];
+      // Trigger both downloads with slight delay
+      files.forEach((f, i) => {
+        setTimeout(() => {
+          const a = document.createElement('a');
+          a.href = f.href;              // file path (relative to your HTML)
+          a.setAttribute('download', f.name);
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        }, i * 250); // small delay so browsers don’t block multiple downloads
+      });
+    }
+
     (function () {
       const toggle = document.getElementById('langToggle');
       if (!toggle) return;
