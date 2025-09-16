@@ -205,6 +205,28 @@
       opacity: 1;
     }
 
+    /* Certificados button: same style as .print-btn, just shifted left */
+    .cert-btn {
+      position: absolute;
+      right: 112px;
+      /* move left so it doesn't overlap the PDF button */
+      top: -29px;
+      background: #007acc;
+      border: none;
+      color: #fff;
+      padding: 4px 6px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+    }
+
+    @media print {
+      .cert-btn {
+        display: none !important;
+      }
+    }
+
     /* Print button */
     .print-btn {
       position: absolute;
@@ -280,6 +302,8 @@
 
 <body>
   <div class="container">
+    <!-- Button to download certificates -->
+<button class="cert-btn" onclick="downloadCertificates()">Certificados</button>
     <button class="print-btn" onclick="window.print()">Download PDF</button>
 
     <!-- Language Switch (ES page) -->
