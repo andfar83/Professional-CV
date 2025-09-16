@@ -2,20 +2,20 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>CV – Andrés Felipe Ávila Rincón</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Andrés Felipe Ávila Rincón — Técnico en IT, desarrollo web, multimedia y herramientas de IA. Proyectos front-end/back-end, reparación de hardware, bases de datos y producción creativa.">
+    content="Andrés Felipe Ávila Rincón — Soporte IT, desarrollo web, diseño gráfico y herramientas de IA. Proyectos front-end/back-end, bases de datos y soluciones digitales." />
+
   <!-- Theme color for Android status & address bar -->
   <meta name="theme-color" content="#007acc" />
   <meta name="msapplication-navbutton-color" content="#007acc" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 
   <style>
     * {
@@ -37,7 +37,7 @@
       margin: auto;
       background: #fff;
       padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
       position: relative;
       border-radius: 8px;
     }
@@ -49,13 +49,13 @@
     .name {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: .25rem;
       color: #222;
       line-height: 1.2;
     }
 
     .contact {
-      font-size: 0.95rem;
+      font-size: .95rem;
       color: #555;
     }
 
@@ -76,7 +76,7 @@
 
     .section h2 {
       border-bottom: 2px solid #007acc;
-      padding-bottom: 0.3rem;
+      padding-bottom: .3rem;
       margin-bottom: 1rem;
       font-size: 1.4rem;
       color: #222;
@@ -87,20 +87,7 @@
     }
 
     .list li {
-      margin-bottom: 0.5rem;
-    }
-
-    .link-list a {
-      display: inline-block;
-      margin-right: 1rem;
-      font-weight: 600;
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    .link-list a:hover {
-      color: #005fa3;
-      text-decoration: underline;
+      margin-bottom: .5rem;
     }
 
     /* Language Switcher (top-right) */
@@ -128,11 +115,10 @@
       background: #007acc;
       border-radius: var(--switch-h);
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background .3s;
       user-select: none;
     }
 
-    /* Knob (default = left for English) */
     .slider::before {
       content: "";
       position: absolute;
@@ -142,11 +128,10 @@
       bottom: var(--pad);
       background: #fff;
       border-radius: 50%;
-      transition: transform 0.35s;
+      transition: transform .35s;
       will-change: transform;
     }
 
-    /* Edge labels */
     .slider .en,
     .slider .es {
       position: absolute;
@@ -154,13 +139,12 @@
       transform: translateY(-50%);
       font-weight: 700;
       font-size: 12px;
-      color: #ffffff;
-      transition: opacity 0.3s;
+      color: #fff;
+      transition: opacity .3s;
       pointer-events: none;
-      letter-spacing: 0.3px;
+      letter-spacing: .3px;
     }
 
-    /* EN on the left, ES on the right */
     .slider .en {
       left: 8px;
       opacity: 1;
@@ -168,10 +152,9 @@
 
     .slider .es {
       right: 8px;
-      opacity: 0.5;
+      opacity: .5;
     }
 
-    /* Checked (Spanish): knob moves right; highlight ES, dim EN */
     input:checked+.slider {
       background: #005fa3;
     }
@@ -181,11 +164,42 @@
     }
 
     input:checked+.slider .en {
-      opacity: 0.5;
+      opacity: .5;
     }
 
     input:checked+.slider .es {
       opacity: 1;
+    }
+
+    /* Experience helpers */
+    .job {
+      margin-bottom: 1rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: 700;
+    }
+
+    .job-org {
+      color: #444;
+    }
+
+    .job-dates {
+      color: #666;
+      font-style: italic;
+      font-size: .95rem;
+    }
+
+    .job-desc {
+      margin-top: .25rem;
     }
 
     @media (max-width: 600px) {
@@ -205,7 +219,7 @@
       }
     }
 
-    /* Print styles for clean PDF export */
+    /* Print styles */
     @media print {
       body {
         background: #fff;
@@ -232,44 +246,13 @@
         border-bottom: 1px solid #000;
       }
     }
-
-    /* Experience layout helpers */
-    .job {
-      margin-bottom: 1rem;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .job-title {
-      font-weight: 700;
-    }
-
-    .job-org {
-      color: #444;
-    }
-
-    .job-dates {
-      color: #666;
-      font-style: italic;
-      font-size: 0.95rem;
-    }
-
-    .job-desc {
-      margin-top: 0.25rem;
-    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <!-- Conmutador de idioma -->
-    <label class="lang-switch" aria-label="Change language">
+    <label class="lang-switch" aria-label="Cambiar idioma">
       <input type="checkbox" id="langToggle" role="switch" aria-checked="false" />
       <span class="slider" aria-hidden="true">
         <span class="en">EN</span>
@@ -283,69 +266,100 @@
       <p class="contact">
         Ibagué, Colombia •
         <a href="mailto:andresfar83@outlook.com">andresfar83@outlook.com</a> •
-        <a href="tel:+573117672595">+57 311 767 2595</a> 
-        <!-- <a href="https://www.linkedin.com/in/andres-avila-239900324" target="_blank" rel="noopener">LinkedIn</a> -->
+        <a href="tel:+573117672595">+57 311 767 2595</a>
       </p>
     </header>
 
-    <!-- Perfil -->
+    <!-- Perfil Profesional -->
     <section class="section">
       <h2>Perfil Profesional</h2>
-      <p>Profesional multifacético con experiencia en soporte IT, desarrollo digital/web, producción multimedia y gestión operativa. He trabajado en mantenimiento y reparación de equipos de computación, diseño de soluciones web y administración de cableado. Además, cuento con sólida trayectoria en limpieza comercial y residencial, incluyendo la supervisión de equipos de 2 a 6 personas, planificación logística y control de calidad en cada servicio, así como en la formación de personal mediante módulos de capacitación en protocolos de limpieza industrial y residencial, garantizando eficiencia operativa y cumplimiento de normas sanitarias. Implemento protocolos de higiene de alto estándar y utilizo tecnologías de inteligencia artificial para optimizar procesos. Bilingüe español-inglés, con capacidad para colaborar eficazmente con equipos y clientes internacionales.</p>
+      <p>
+        Especialista en <strong>Soporte Técnico</strong>, <strong>desarrollo web</strong> y <strong>diseño gráfico</strong>,
+        con trayectoria en la administración y mantenimiento de sistemas, creación de aplicaciones digitales y gestión
+        de bases de datos. Mi experiencia de más de <strong>XX años en Estados Unidos</strong> respalda mi nivel
+        <strong>bilingüe (Español–Inglés C2)</strong>, lo que me permite desenvolverme en entornos multiculturales y
+        globales. Me destaco por integrar <strong>inteligencia artificial</strong> y <strong>tecnologías
+          emergentes</strong> en proyectos que optimizan procesos, fortalecen la comunicación y ofrecen soluciones
+        innovadoras y efectivas.
+      </p>
     </section>
 
     <!-- Objetivo -->
     <section class="section">
       <h2>Objetivo</h2>
       <p>
-        Aplicar tecnologías modernas e inteligencia artificial para optimizar operaciones, mejorar la calidad de los
-        servicios de IT y optimizar la creación de contenido digital. Liderar proyectos de innovación, ejecutar campañas
-        de comunicación efectivas y ofrecer programas de capacitación digital de alto impacto en entornos corporativos,
-        educativos y de salud.
+        Consolidar mi carrera en <strong>Soporte Técnico</strong> y <strong>desarrollo web</strong>, aplicando habilidades en
+        <strong>programación</strong>, <strong>diseño digital</strong> y <strong>herramientas de AI</strong> para
+        generar soluciones prácticas y de alto impacto. Busco aportar en organizaciones que valoren la
+        <strong>innovación</strong>, la <strong>eficiencia</strong> y el <strong>trabajo en equipo</strong>,
+        aprovechando mi capacidad bilingüe y experiencia internacional.
       </p>
     </section>
 
-    <!-- Habilidades -->
-<section class="section">
-  <h2>Habilidades Técnicas</h2>
-  <ul class="list">
-    <li><strong>Tecnologías y soporte IT:</strong> Reparación y mantenimiento de PC y hardware; redes; bases de
-      datos; desarrollo web y apps (HTML, CSS, JavaScript, PHP, Python, MySQL, WordPress, Webflow).</li>
-    <li><strong>Gestión de cableado y operaciones:</strong> Organización y etiquetado de cableado estructurado;
-      implementación de protocolos de seguridad; coordinación de equipos; planificación logística y control de calidad en operaciones.</li>
-    <li><strong>Limpieza comercial y residencial:</strong> Implementación de protocolos de higiene de alto estándar;
-      supervisión de equipos de 2-6 personas; capacitación en protocolos de limpieza industrial y residencial;
-      cumplimiento de normas sanitarias.</li>
-    <li><strong>Herramientas digitales y audiovisuales:</strong> Generación de contenidos con IA (ChatGPT, DALL·E);
-      control y mantenimiento de cámaras, luces y equipos audiovisuales.</li>
-  </ul>
-</section>
+    <!-- Habilidades Técnicas -->
+    <section class="section">
+      <h2>Habilidades Técnicas</h2>
+      <ul class="list">
+        <li><strong>Soporte Técnico y Hardware:</strong> Instalación, diagnóstico y mantenimiento de equipos de cómputo;
+          gestión de redes y cableado estructurado; resolución de incidentes técnicos.</li>
+        <li><strong>Desarrollo Web y Programación:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; creación de
+          sitios dinámicos y aplicaciones interactivas; CMS y frameworks (WordPress, Webflow).</li>
+        <li><strong>Diseño Gráfico y UX/UI:</strong> Interfaces limpias y usables; dominio de
+          <strong>Photoshop</strong>, <strong>Illustrator</strong> e <strong>InDesign</strong>.</li>
+        <li><strong>Bases de Datos y Backend:</strong> Modelado y administración de bases de datos; integración de
+          <strong>APIs</strong> y sistemas de gestión a medida.</li>
+        <li><strong>AI y Automatización:</strong> Soluciones con <strong>ChatGPT</strong>, <strong>DALL·E</strong> y
+          otras herramientas de <strong>inteligencia artificial</strong> para generación de contenido y optimización de
+          flujos.</li>
+        <li><strong>Productividad y Colaboración:</strong> GitHub, Trello, VS Code; gestión de proyectos y trabajo
+          remoto multidisciplinario.</li>
+      </ul>
+    </section>
 
-    <!-- Experiencia -->
+    <!-- Experiencia Laboral -->
     <section class="section">
       <h2>Experiencia Laboral</h2>
-      <ul class="list">
-        <li>
-          <strong>Desarrollador Front-end / Back-end — Autodirigido (2023–Actualidad):</strong>
-          Desarrollo de aplicaciones web y sistemas de gestión; prácticas de limpieza y orden en infraestructuras de
-          proyectos.
-        </li>
-        <li>
-          <strong>Asistente de Audio, Video e Iluminación — OSSA Studio, Charlotte, NC (2020–2025):</strong>
-          Pre-edición, grabaciones y producción de videos institucionales, corporativos y entretenimiento. Implementé un
-          sistema de base de datos para seguimiento de equipos técnicos.
-        </li>
-        <li>
-          <strong>Operaciones (Servicios de Limpieza) — exec.com & Handy.com, San Francisco, CA (2013–2019):</strong>
-          Capacitación de personal y prestación de servicios de limpieza; protocolos de higiene y seguridad en espacios
-          comerciales y clínicos.
-        </li>
-        <li>
-          <strong>Soporte Técnico — Dell Computer, Charlotte, NC (2008–2012):</strong>
-          Atención de garantías y soporte técnico; organización de cableado y mantenimiento preventivo en estaciones de
-          trabajo.
-        </li>
-      </ul>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Desarrollador Web / Graphic Designer</span>
+            <span class="job-org">— Autónomo</span>
+          </div>
+          <span class="job-dates">2023–Actualidad</span>
+        </div>
+        <p class="job-desc">
+          Diseño y programación de <strong>aplicaciones web</strong> con integración de <strong>sistemas de
+            gestión</strong> y optimización de procesos.
+        </p>
+        <ul class="list">
+          <li>Desarrollo de <strong>PWA</strong> para negocios locales, integrando <strong>frontend</strong> y
+            <strong>backend</strong>.</li>
+          <li>Diseño de plataformas digitales con <strong>bases de datos</strong> y paneles de administración.</li>
+          <li>Automatización de tareas con <strong>Python</strong> y <strong>JavaScript</strong> para mejorar la
+            eficiencia.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Soporte Técnico</span>
+            <span class="job-org">— Dell Computer, Charlotte, NC</span>
+          </div>
+          <span class="job-dates">2008–2012</span>
+        </div>
+        <p class="job-desc">
+          Atención técnica a clientes corporativos y particulares, gestionando reparaciones, garantías y mantenimiento
+          de equipos.
+        </p>
+        <ul class="list">
+          <li>Resolución de incidencias en <strong>hardware</strong> y <strong>software</strong> con altos niveles de
+            satisfacción.</li>
+          <li>Implementación de <strong>cableado estructurado</strong> y mantenimiento de estaciones de trabajo en
+            entornos corporativos.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Educación -->
@@ -354,7 +368,7 @@
       <ul class="list">
         <li><strong>Aprendizaje Continuo (2024–2025):</strong> Fundamentos de IA; Introducción a Programación y Bases de
           Datos.</li>
-        <li><strong>San Francisco Community College (2015):</strong> Inglés Intermedio-Avanzado.</li>
+        <li><strong>San Francisco Community College (2015):</strong> Inglés Intermedio–Avanzado.</li>
         <li><strong>Instituto AB Tech, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
         <li><strong>Charlotte Community College (2005):</strong> Inglés Básico.</li>
         <li><strong>Bachiller — Externado Popular, Ibagué (1999).</strong></li>
@@ -364,76 +378,50 @@
     <!-- Idiomas -->
     <section class="section">
       <h2>Idiomas</h2>
-      <p><strong>Español:</strong> Nativo • <strong>Inglés:</strong> C1 (comprendo, leo, escribo y hablo)</p>
+      <p><strong>Español:</strong> Nativo • <strong>Inglés:</strong> C2 (avalado por <strong>XX+ años de residencia en
+          EE.UU.</strong>)</p>
     </section>
+  </div>
 
-    <!-- Portafolio y Enlaces
-    <section class="section">
-      <h2>Portafolio y Enlaces</h2>
-      <div class="link-list">
-        <a href="https://github.com/andfar83" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.behance.net/andresfe" target="_blank" rel="noopener">Behance</a>
-        <a href="https://www.linkedin.com/in/andres-avila-239900324" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="http://www.andfar83.com" target="_blank" rel="noopener">Sitio Personal</a>
-      </div>
-    </section>
-  </div> -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('langToggle');
+      if (!toggle) return;
 
-    <script>
-      (function () {
-        const toggle = document.getElementById('langToggle');
-        if (!toggle) return;
+      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      const isSpanishDoc = htmlLang.startsWith('es');
+      const isEnglishDoc = htmlLang.startsWith('en');
 
-        // Detect current language from the HTML tag
-        const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-        const isSpanishDoc = htmlLang.startsWith('es');
-        const isEnglishDoc = htmlLang.startsWith('en');
+      const storage = {
+        get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
+        set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
+      };
 
-        // localStorage helpers with guard (some Android WebViews block it on file://)
-        const storage = {
-          get(key) {
-            try { return window.localStorage.getItem(key); } catch { return null; }
-          },
-          set(key, val) {
-            try { window.localStorage.setItem(key, val); } catch { }
-          }
-        };
+      const saved = storage.get('lang');
+      const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
+      toggle.checked = wantSpanish;
+      toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
 
-        // Initialize toggle state from storage, else from the actual page lang
-        const saved = storage.get('lang');
-        const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
-        toggle.checked = wantSpanish;
-        toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
-
-        // If a pref exists but doesn't match this page, redirect to the counterpart
-        if (saved) {
-          const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
-          if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
-            // Build robust path: keep current directory, swap filename
-            const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
-            location.href = base + targetName;
-            return;
-          }
-        }
-
-        // On change, persist and go to the other file (keeping directory)
-        toggle.addEventListener('change', () => {
-          const lang = toggle.checked ? 'es' : 'en';
-          toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
-          storage.set('lang', lang);
-
-          const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
+      if (saved) {
+        const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
+        if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
           const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
           location.href = base + targetName;
-        });
-      })();
-    </script>
+          return;
+        }
+      }
 
+      toggle.addEventListener('change', () => {
+        const lang = toggle.checked ? 'es' : 'en';
+        toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+        storage.set('lang', lang);
+
+        const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
+        const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+        location.href = base + targetName;
+      });
+    })();
+  </script>
 </body>
 
 </html>
-
-
-
-
-
