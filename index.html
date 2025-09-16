@@ -6,7 +6,7 @@
   <title>CV – Andrés Felipe Ávila Rincón</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Andrés Felipe Ávila Rincón — Soporte Técnico, desarrollo web, diseño gráfico y herramientas de IA." />
+    content="Andrés Felipe Ávila Rincón — Soporte IT, desarrollo web, diseño gráfico y herramientas de IA." />
   <meta name="theme-color" content="#007acc" />
   <meta name="msapplication-navbutton-color" content="#007acc" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -93,7 +93,38 @@
       margin-bottom: .5rem;
     }
 
-    /* Language Switcher (top-right) */
+    /* Job blocks */
+    .job {
+      margin-bottom: 1.6rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: 700;
+    }
+
+    .job-org {
+      color: #444;
+    }
+
+    .job-dates {
+      color: #666;
+      font-style: italic;
+      font-size: .95rem;
+    }
+
+    .job-desc {
+      margin-top: .25rem;
+    }
+
+    /* Language Switcher */
     .lang-switch {
       position: absolute;
       top: 10px;
@@ -193,72 +224,13 @@
       background: #005fa3;
     }
 
-    /* Job helpers */
-    .job {
-      margin-bottom: 1rem;
-      break-inside: avoid;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .job-title {
-      font-weight: 700;
-    }
-
-    .job-org {
-      color: #444;
-    }
-
-    .job-dates {
-      color: #666;
-      font-style: italic;
-      font-size: .95rem;
-    }
-
-    .job-desc {
-      margin-top: .25rem;
-    }
-
-    @media (max-width: 600px) {
-      .name {
-        font-size: 2rem;
-      }
-
-      .lang-switch {
-        --switch-w: 52px;
-        --switch-h: 24px;
-        --knob: 18px;
-      }
-
-      .slider .en,
-      .slider .es {
-        font-size: 10px;
-      }
-    }
-
-    /* Print styles for pixel-identical look */
+    /* Print */
     @page {
       size: Letter;
       margin: 14mm;
     }
 
     @media print {
-      .section {
-        page-break-inside: auto;
-        break-inside: auto;
-      }
-
-      .job,
-      .list li {
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
 
       html,
       body {
@@ -287,6 +259,18 @@
         text-decoration: none;
       }
 
+      /* Allow sections to split to avoid big gaps */
+      .section {
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      .job,
+      .list li {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
       .section h2 {
         border-bottom: 2px solid #007acc;
       }
@@ -298,23 +282,23 @@
   <div class="container">
     <button class="print-btn" onclick="window.print()">Download PDF</button>
 
-    <!-- Conmutador de idioma -->
+    <!-- Language Switch (ES page) -->
     <label class="lang-switch" aria-label="Cambiar idioma">
-      <input type="checkbox" id="langToggle" role="switch" aria-checked="false" />
+      <input type="checkbox" id="langToggle" role="switch" aria-checked="true" checked />
       <span class="slider" aria-hidden="true">
         <span class="en">EN</span>
         <span class="es">ES</span>
       </span>
     </label>
 
-    <!-- Encabezado -->
+    <!-- Header -->
     <header>
       <h1 class="name">Andrés Felipe Ávila Rincón</h1>
       <p class="contact">
         Ibagué, Colombia •
         <a href="mailto:andresfar83@outlook.com">andresfar83@outlook.com</a> •
         <a href="tel:+573117672595">+57 311 767 2595</a> •
-        Disponibilidad para viajar: <span style="color:#007acc;">Sí</span>
+        Disponibilidad para viajar: <span style="color:#007acc; font-weight:600;">Sí</span>
       </p>
     </header>
 
@@ -324,7 +308,7 @@
       <p>
         Especialista en <strong>Soporte Técnico</strong>, <strong>desarrollo web</strong> y <strong>diseño
           gráfico</strong>,
-        con trayectoria en la administración y mantenimiento de sistemas, creación de aplicaciones digitales y gestión
+        con trayectoria en la administración y mantenimiento de sistemas de computación, creación de aplicaciones digitales y gestión
         de bases de datos. Mi experiencia de más de <strong>20+ años en Estados Unidos</strong> respalda mi nivel
         <strong>bilingüe (Español–Inglés C2)</strong>, lo que me permite desenvolverme en entornos multiculturales y
         globales. Me destaco por integrar <strong>inteligencia artificial</strong> y <strong>tecnologías
@@ -337,12 +321,11 @@
     <section class="section">
       <h2>Objetivo</h2>
       <p>
-        Consolidar mi carrera en <strong>Soporte Técnico</strong> y <strong>desarrollo web</strong>, aplicando
-        habilidades en
-        <strong>programación</strong>, <strong>diseño digital</strong> y <strong>herramientas de AI</strong> para
-        generar soluciones prácticas y de alto impacto. Busco aportar en organizaciones que valoren la
-        <strong>innovación</strong>, la <strong>eficiencia</strong> y el <strong>trabajo en equipo</strong>,
-        aprovechando mi capacidad bilingüe y experiencia internacional.
+        Aplicar mi experiencia en <strong>Soporte IT y desarrollo web</strong> para contribuir en organizaciones que
+        valoren
+        la <strong>eficiencia tecnológica y la innovación</strong>, participando en proyectos donde pueda generar
+        impacto a través
+        de la programación, el diseño digital y el uso estratégico de la IA.
       </p>
     </section>
 
@@ -350,101 +333,116 @@
     <section class="section">
       <h2>Habilidades Técnicas</h2>
       <ul class="list">
-        <li><strong>Soporte Técnico y Hardware:</strong> Instalación, diagnóstico y mantenimiento de equipos de cómputo;
-          gestión de redes y cableado estructurado; resolución de incidentes técnicos.</li>
-        <li><strong>Desarrollo Web y Programación:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; creación de
-          sitios dinámicos y aplicaciones interactivas; CMS y frameworks (WordPress, Webflow).</li>
-        <li><strong>Diseño Gráfico y UX/UI:</strong> Interfaces limpias y usables; dominio de
-          <strong>Photoshop</strong>, <strong>Illustrator</strong> e <strong>InDesign</strong>.
+        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, diseño responsivo y UX/UI.</li>
+        <li><strong>Backend y Bases de datos:</strong> PHP, Python, MySQL, integración de APIs y sistemas de gestión.
         </li>
-        <li><strong>Bases de Datos y Backend:</strong> Modelado y administración de bases de datos; integración de
-          <strong>APIs</strong> y sistemas de gestión a medida.
-        </li>
-        <li><strong>AI y Automatización:</strong> Soluciones con <strong>ChatGPT</strong>, <strong>DALL·E</strong> y
-          otras herramientas de <strong>inteligencia artificial</strong> para generación de contenido y optimización de
-          flujos.</li>
-        <li><strong>Productividad y Colaboración:</strong> GitHub, Trello, VS Code; gestión de proyectos y trabajo
-          remoto multidisciplinario.</li>
+        <li><strong>Soporte IT y Hardware:</strong> Instalación, diagnóstico y mantenimiento de equipos; redes y
+          cableado estructurado.</li>
+        <li><strong>Diseño y Producción Digital:</strong> Photoshop, Illustrator, InDesign, fotografía, edición de
+          video.</li>
+        <li><strong>Inteligencia Artificial y Desarrollo Creativo:</strong> Uso de ChatGPT, DALL·E, y creación
+            de juegos y aplicaciones con Python y JavaScript.</li>
+        <li><strong>Herramientas de Productividad y IA:</strong> GitHub, VS Code, <strong>N8N</strong>,
+          <strong>Claude</strong>, <strong>Cursor</strong>.</li>
       </ul>
     </section>
 
     <!-- Experiencia Laboral -->
     <section class="section">
-  <h2>Experiencia Laboral</h2>
+      <h2>Experiencia Laboral</h2>
 
-  <div class="job">
-    <h3 class="job-title">Desarrollador Web / Graphic Designer — Freelance</h3>
-    <p class="job-meta">2023–Actualidad</p>
-    <p class="job-desc">
-      Diseño y desarrollo de <strong>aplicaciones web</strong> con integración de
-      <strong>sistemas de gestión</strong> y optimización de procesos.
-    </p>
-    <ul class="job-list">
-      <li>Desarrollo de <strong>PWA</strong> para negocios locales, integrando frontend y backend.</li>
-      <li>Diseño de plataformas digitales con <strong>bases de datos</strong> y paneles de administración.</li>
-      <li>Automatización de tareas con <strong>Python</strong> y <strong>JavaScript</strong>.</li>
-    </ul>
-  </div>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Desarrollador Web / Graphic Designer</span>
+            <span class="job-org">— Freelance</span>
+          </div>
+          <span class="job-dates">2023–Actualidad</span>
+        </div>
+        <p class="job-desc">
+          Diseño y desarrollo de <strong>aplicaciones web</strong> con integración de <strong>sistemas de
+            gestión</strong>.
+        </p>
+        <ul class="list">
+          <li>Creación de <strong>PWA</strong> para negocios locales con frontend y backend.</li>
+          <li>Creación de <strong>juegos y aplicaciones</strong> con <strong>Python</strong> y
+            <strong>JavaScript</strong>.</li>
+          <li>Diseño de plataformas con <strong>bases de datos</strong> y paneles de control.</li>
+        </ul>
+      </div>
 
-  <div class="job">
-    <h3 class="job-title">Empleado — exec.com & Handy.com</h3>
-    <p class="job-meta">Área de la Bahía de San Francisco • 2013–2019</p>
-    <p class="job-desc">
-      Responsable de la <strong>capacitación y supervisión de personal de limpieza</strong>
-      para garantizar altos estándares en servicios residenciales, comerciales y clínicos.
-    </p>
-    <ul class="job-list">
-      <li>Implementación de protocolos de <strong>higiene</strong> y <strong>seguridad</strong>.</li>
-      <li>Control de calidad y cumplimiento normativo.</li>
-      <li>Enfoque en la satisfacción del cliente.</li>
-    </ul>
-  </div>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Empleado</span>
+            <span class="job-org">— exec.com & Handy.com, Área de la Bahía de San Francisco</span>
+          </div>
+          <span class="job-dates">2013–2019</span>
+        </div>
+        <p class="job-desc">
+          Capacitación y supervisión de <strong>personal de limpieza</strong> para garantizar altos estándares en
+          servicios residenciales, comerciales y clínicos.
+        </p>
+        <ul class="list">
+          <li>Implementación de protocolos de <strong>higiene</strong> y <strong>seguridad</strong>.</li>
+          <li>Supervisión de calidad y cumplimiento normativo.</li>
+          <li>Enfoque en satisfacción del cliente.</li>
+        </ul>
+      </div>
 
-  <div class="job">
-    <h3 class="job-title">Freelance — Fotografía, Diseño y Producción Digital</h3>
-    <p class="job-meta">Concurrente</p>
-    <p class="job-desc">
-      Proyectos como <strong>fotógrafo</strong> y <strong>diseñador</strong> independiente.
-    </p>
-    <ul class="job-list">
-      <li><strong>Fotografía para promoción de Airbnb</strong> y proyectos personales.</li>
-      <li><strong>Fotografía aérea con dron</strong>.</li>
-      <li><strong>Diseño web y gráfico</strong>, <strong>edición y producción de video</strong> para clientes locales.</li>
-    </ul>
-  </div>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Freelance</span>
+            <span class="job-org">— Fotografía, Diseño y Producción Digital</span>
+          </div>
+          <span class="job-dates">Concurrente</span>
+        </div>
+        <p class="job-desc">
+          Proyectos independientes en fotografía, diseño y producción audiovisual.
+        </p>
+        <ul class="list">
+          <li><strong>Fotografía para promoción de Airbnb</strong> y proyectos personales.</li>
+          <li><strong>Fotografía aérea con dron</strong>.</li>
+          <li><strong>Diseño web y gráfico</strong>, edición y producción de video para clientes locales.</li>
+        </ul>
+      </div>
 
-  <div class="job">
-    <h3 class="job-title">Soporte Técnico — Dell Computer</h3>
-    <p class="job-meta">Charlotte, NC • 2008–2012</p>
-    <p class="job-desc">
-      Atención técnica a clientes corporativos y particulares, gestionando reparaciones, garantías y mantenimiento de equipos.
-    </p>
-    <ul class="job-list">
-      <li>Resolución de incidencias en <strong>hardware</strong> y <strong>software</strong>.</li>
-      <li>Implementación de <strong>cableado estructurado</strong> y mantenimiento de estaciones de trabajo.</li>
-    </ul>
-  </div>
-</section>
-
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Soporte Técnico</span>
+            <span class="job-org">— Dell Computer, Charlotte, NC</span>
+          </div>
+          <span class="job-dates">2008–2012</span>
+        </div>
+        <p class="job-desc">
+          Atención técnica para clientes corporativos y particulares.
+        </p>
+        <ul class="list">
+          <li>Diagnóstico y resolución de incidencias en <strong>hardware</strong> y <strong>software</strong>.</li>
+          <li>Organización de <strong>cableado estructurado</strong> y mantenimiento de estaciones de trabajo.</li>
+        </ul>
+      </div>
+    </section>
 
     <!-- Educación -->
     <section class="section">
       <h2>Educación</h2>
       <ul class="list">
-        <li><strong>Aprendizaje Continuo (2024–2025):</strong> Fundamentos de IA; Introducción a Programación y Bases de
-          Datos.</li>
-        <li><strong>San Francisco Community College (2015):</strong> Inglés Intermedio–Avanzado.</li>
-        <li><strong>Instituto AB Tech, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
-        <li><strong>Charlotte Community College (2005):</strong> Inglés Básico.</li>
-        <li><strong>Bachiller — Externado Popular, Ibagué (1999).</strong></li>
+        <li><strong>Aprendizaje continuo (2024–2025):</strong> IA aplicada, fundamentos de programación y bases de
+          datos.</li>
+        <li><strong>San Francisco Community College (2015):</strong> Inglés intermedio-avanzado.</li>
+        <li><strong>AB Tech Institute, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
+        <li><strong>Charlotte Community College (2005):</strong> Inglés básico.</li>
+        <li><strong>Bachillerato — Externado Popular, Ibagué (1999).</strong></li>
       </ul>
     </section>
 
     <!-- Idiomas -->
     <section class="section">
       <h2>Idiomas</h2>
-      <p><strong>Español:</strong> Nativo • <strong>Inglés:</strong> C2 (avalado por <strong>20+ años de residencia en
-          EE.UU.</strong>)</p>
+      <p><strong>Español:</strong> Nativo • <strong>Inglés:</strong> C2 (20+ años de residencia en EE.UU.)</p>
     </section>
   </div>
 
@@ -452,27 +450,18 @@
     (function () {
       const toggle = document.getElementById('langToggle');
       if (!toggle) return;
-
-      // Detect current document language
       const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
       const isSpanishDoc = htmlLang.startsWith('es');
       const isEnglishDoc = htmlLang.startsWith('en');
-
-      // localStorage helpers with guard
       const storage = {
         get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
         set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
       };
-
-      // Load preference
       const saved = storage.get('lang');
-      const initialLang = saved || (isSpanishDoc ? 'es' : 'en');
-
-      // Sync toggle with initial language
-      toggle.checked = initialLang === 'es';
+      const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
+      toggle.checked = wantSpanish;
       toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
 
-      // If stored pref mismatches this page, redirect
       if (saved) {
         const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
         if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
@@ -482,19 +471,16 @@
         }
       }
 
-      // Handle toggle changes
       toggle.addEventListener('change', () => {
         const lang = toggle.checked ? 'es' : 'en';
         toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
         storage.set('lang', lang);
-
         const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
         const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
         location.href = base + targetName;
       });
     })();
   </script>
-
 </body>
 
 </html>

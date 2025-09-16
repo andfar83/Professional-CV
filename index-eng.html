@@ -93,7 +93,38 @@
       margin-bottom: .5rem;
     }
 
-    /* Language Switcher (top-right) */
+    /* Job blocks */
+    .job {
+      margin-bottom: 1.6rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: 700;
+    }
+
+    .job-org {
+      color: #444;
+    }
+
+    .job-dates {
+      color: #666;
+      font-style: italic;
+      font-size: .95rem;
+    }
+
+    .job-desc {
+      margin-top: .25rem;
+    }
+
+    /* Language Switcher */
     .lang-switch {
       position: absolute;
       top: 10px;
@@ -150,12 +181,12 @@
 
     .slider .en {
       left: 8px;
-      opacity: .5;
+      opacity: 1;
     }
 
     .slider .es {
       right: 8px;
-      opacity: 1;
+      opacity: .5;
     }
 
     input:checked+.slider {
@@ -167,11 +198,11 @@
     }
 
     input:checked+.slider .en {
-      opacity: 1;
+      opacity: .5;
     }
 
     input:checked+.slider .es {
-      opacity: .5;
+      opacity: 1;
     }
 
     /* Print button */
@@ -193,72 +224,13 @@
       background: #005fa3;
     }
 
-    /* Job helpers */
-    .job {
-      margin-bottom: 1rem;
-      break-inside: avoid;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .job-title {
-      font-weight: 700;
-    }
-
-    .job-org {
-      color: #444;
-    }
-
-    .job-dates {
-      color: #666;
-      font-style: italic;
-      font-size: .95rem;
-    }
-
-    .job-desc {
-      margin-top: .25rem;
-    }
-
-    @media (max-width: 600px) {
-      .name {
-        font-size: 2rem;
-      }
-
-      .lang-switch {
-        --switch-w: 52px;
-        --switch-h: 24px;
-        --knob: 18px;
-      }
-
-      .slider .en,
-      .slider .es {
-        font-size: 10px;
-      }
-    }
-
-    /* Print styles for pixel-identical look */
+    /* Print */
     @page {
       size: Letter;
       margin: 14mm;
     }
 
     @media print {
-      .section {
-        page-break-inside: auto;
-        break-inside: auto;
-      }
-
-      .job,
-      .list li {
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
 
       html,
       body {
@@ -287,6 +259,17 @@
         text-decoration: none;
       }
 
+      .section {
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      .job,
+      .list li {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
       .section h2 {
         border-bottom: 2px solid #007acc;
       }
@@ -298,9 +281,9 @@
   <div class="container">
     <button class="print-btn" onclick="window.print()">Download PDF</button>
 
-    <!-- Language switch (this page = EN) -->
+    <!-- Language Switch (EN page) -->
     <label class="lang-switch" aria-label="Change language">
-      <input type="checkbox" id="langToggle" role="switch" aria-checked="true" checked />
+      <input type="checkbox" id="langToggle" role="switch" aria-checked="false" />
       <span class="slider" aria-hidden="true">
         <span class="en">EN</span>
         <span class="es">ES</span>
@@ -314,7 +297,7 @@
         Ibagué, Colombia •
         <a href="mailto:andresfar83@outlook.com">andresfar83@outlook.com</a> •
         <a href="tel:+573117672595">+57 311 767 2595</a> •
-        Willing to travel: <span style="color:#007acc;">Yes</span>
+        Willing to travel: <span style="color:#007acc; font-weight:600;">Yes</span>
       </p>
     </header>
 
@@ -336,11 +319,10 @@
     <section class="section">
       <h2>Objective</h2>
       <p>
-        Advance my career in <strong>IT Support</strong> and <strong>web development</strong> by applying skills in
-        <strong>programming</strong>, <strong>digital design</strong>, and <strong>AI tools</strong> to build practical,
-        high-impact solutions. I aim to contribute to organizations that value <strong>innovation</strong>,
-        <strong>efficiency</strong>, and <strong>teamwork</strong>, leveraging my bilingual abilities and international
-        experience to add value in corporate and technological settings.
+        Apply my expertise in <strong>IT Support and web development</strong> to contribute to organizations that value
+        <strong>technological efficiency and innovation</strong>, participating in projects where I can create impact
+        through
+        programming, digital design, and the strategic use of AI.
       </p>
     </section>
 
@@ -348,19 +330,17 @@
     <section class="section">
       <h2>Technical Skills</h2>
       <ul class="list">
-        <li><strong>IT Support & Hardware:</strong> Installation, diagnostics, and maintenance of computer systems;
-          network and structured cabling management; troubleshooting and incident resolution.</li>
-        <li><strong>Web Development & Programming:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; dynamic
-          websites and interactive applications; CMS/frameworks (WordPress, Webflow).</li>
-        <li><strong>Graphic Design & UX/UI:</strong> Clean, user-friendly interfaces; proficient with
-          <strong>Photoshop</strong>, <strong>Illustrator</strong>, and <strong>InDesign</strong>.
+        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, responsive design, UX/UI.</li>
+        <li><strong>Backend & Databases:</strong> PHP, Python, MySQL, API integration, management systems.</li>
+        <li><strong>IT Support & Hardware:</strong> Installation, diagnostics, maintenance; networks and structured
+          cabling.</li>
+        <li><strong>Design & Digital Production:</strong> Photoshop, Illustrator, InDesign, photography, video editing.
         </li>
-        <li><strong>Databases & Backend:</strong> Database modeling and administration; <strong>API</strong> integration
-          and custom management systems.</li>
-        <li><strong>AI & Automation:</strong> Solutions using <strong>ChatGPT</strong>, <strong>DALL·E</strong>, and
-          other <strong>AI</strong> tools for content generation and workflow optimization.</li>
-        <li><strong>Productivity & Collaboration:</strong> GitHub, Trello, VS Code; project management and remote
-          teamwork across disciplines.</li>
+        <li><strong>Artificial Intelligence & Creative Development:</strong> Use of ChatGPT, DALL·E, and creation of
+          games and applications with Python and JavaScript.</li>
+        <li><strong>Productivity & AI Tools:</strong> GitHub, VS Code, <strong>N8N</strong>, <strong>Claude</strong>,
+          <strong>Cursor</strong>.
+        </li>
       </ul>
     </section>
 
@@ -378,14 +358,51 @@
         </div>
         <p class="job-desc">
           Design and development of <strong>web applications</strong> with integrated <strong>management
-            systems</strong> and process optimization.
+            systems</strong>.
         </p>
         <ul class="list">
-          <li>Built <strong>PWA</strong> apps for local businesses, integrating <strong>frontend</strong> and
-            <strong>backend</strong>.
+          <li>Built <strong>PWA</strong> apps for local businesses, integrating frontend and backend.</li>
+          <li>Created <strong>games and applications</strong> with <strong>Python</strong> and
+            <strong>JavaScript</strong>.
           </li>
-          <li>Designed digital platforms with <strong>databases</strong> and administration panels.</li>
-          <li>Automated tasks with <strong>Python</strong> and <strong>JavaScript</strong> to improve efficiency.</li>
+          <li>Designed platforms with <strong>databases</strong> and admin panels.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Employee</span>
+            <span class="job-org">— exec.com & Handy.com, San Francisco Bay Area</span>
+          </div>
+          <span class="job-dates">2013–2019</span>
+        </div>
+        <p class="job-desc">
+          Trained and supervised <strong>cleaning staff</strong> to deliver high standards in residential, commercial,
+          and clinical services.
+        </p>
+        <ul class="list">
+          <li>Implemented <strong>hygiene</strong> and <strong>safety</strong> protocols.</li>
+          <li>Oversaw quality control and compliance.</li>
+          <li>Ensured customer satisfaction.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Freelance</span>
+            <span class="job-org">— Photography, Web & Digital Design</span>
+          </div>
+          <span class="job-dates">Concurrent</span>
+        </div>
+        <p class="job-desc">
+          Independent photography, design, and multimedia projects.
+        </p>
+        <ul class="list">
+          <li><strong>Airbnb promotional photography</strong> and personal projects.</li>
+          <li><strong>Drone (aerial) photography</strong>.</li>
+          <li><strong>Web and graphic design</strong>, video editing and production for local clients.</li>
         </ul>
       </div>
 
@@ -398,14 +415,11 @@
           <span class="job-dates">2008–2012</span>
         </div>
         <p class="job-desc">
-          Provided technical support to corporate and individual clients, managing repairs, warranties, and maintenance
-          of computer systems.
+          Provided technical support for corporate and individual clients.
         </p>
         <ul class="list">
-          <li>Diagnosed and resolved <strong>hardware</strong> and <strong>software</strong> issues, achieving high
-            customer satisfaction.</li>
-          <li>Implemented <strong>structured cabling</strong> and maintained corporate workstations to improve technical
-            efficiency.</li>
+          <li>Diagnosed and resolved <strong>hardware</strong> and <strong>software</strong> issues.</li>
+          <li>Implemented <strong>structured cabling</strong> and maintained workstations.</li>
         </ul>
       </div>
     </section>
@@ -414,8 +428,8 @@
     <section class="section">
       <h2>Education</h2>
       <ul class="list">
-        <li><strong>Continuous Learning (2024–2025):</strong> Fundamentals of AI; Introduction to Programming and
-          Databases.</li>
+        <li><strong>Continuous Learning (2024–2025):</strong> Applied AI, fundamentals of programming and databases.
+        </li>
         <li><strong>San Francisco Community College (2015):</strong> Intermediate–Advanced English.</li>
         <li><strong>AB Tech Institute, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
         <li><strong>Charlotte Community College (2005):</strong> Basic English.</li>
@@ -426,8 +440,7 @@
     <!-- Languages -->
     <section class="section">
       <h2>Languages</h2>
-      <p><strong>Spanish:</strong> Native • <strong>English:</strong> C2 (supported by <strong>20+ years of residence in
-          the U.S.</strong>)</p>
+      <p><strong>Spanish:</strong> Native • <strong>English:</strong> C2 (20+ years in the U.S.)</p>
     </section>
   </div>
 
@@ -435,27 +448,18 @@
     (function () {
       const toggle = document.getElementById('langToggle');
       if (!toggle) return;
-
-      // Detect current document language
       const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
       const isSpanishDoc = htmlLang.startsWith('es');
       const isEnglishDoc = htmlLang.startsWith('en');
-
-      // localStorage helpers with guard
       const storage = {
         get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
         set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
       };
-
-      // Load preference
       const saved = storage.get('lang');
-      const initialLang = saved || (isSpanishDoc ? 'es' : 'en');
-
-      // Sync toggle with initial language
-      toggle.checked = initialLang === 'es';
+      const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
+      toggle.checked = wantSpanish;
       toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
 
-      // If stored pref mismatches this page, redirect
       if (saved) {
         const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
         if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
@@ -465,19 +469,16 @@
         }
       }
 
-      // Handle toggle changes
       toggle.addEventListener('change', () => {
         const lang = toggle.checked ? 'es' : 'en';
         toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
         storage.set('lang', lang);
-
         const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
         const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
         location.href = base + targetName;
       });
     })();
   </script>
-
 </body>
 
 </html>
