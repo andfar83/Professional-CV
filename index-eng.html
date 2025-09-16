@@ -2,26 +2,28 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>CV – Andrés Felipe Ávila Rincón</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Andrés Felipe Ávila Rincón — IT support, web development, multimedia, and AI tools. Front-end/back-end projects, hardware repair, databases, and creative production.">
-  <!-- Theme color for Android status & address bar -->
+    content="Andrés Felipe Ávila Rincón — IT Support, web development, graphic design and AI tools." />
   <meta name="theme-color" content="#007acc" />
   <meta name="msapplication-navbutton-color" content="#007acc" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap"
-    rel="stylesheet">
-
+    rel="stylesheet" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      height: 100%;
     }
 
     body {
@@ -37,9 +39,10 @@
       margin: auto;
       background: #fff;
       padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
       position: relative;
       border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, .06);
     }
 
     header {
@@ -49,13 +52,13 @@
     .name {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: .25rem;
       color: #222;
       line-height: 1.2;
     }
 
     .contact {
-      font-size: 0.95rem;
+      font-size: .95rem;
       color: #555;
     }
 
@@ -76,7 +79,7 @@
 
     .section h2 {
       border-bottom: 2px solid #007acc;
-      padding-bottom: 0.3rem;
+      padding-bottom: .3rem;
       margin-bottom: 1rem;
       font-size: 1.4rem;
       color: #222;
@@ -87,20 +90,7 @@
     }
 
     .list li {
-      margin-bottom: 0.5rem;
-    }
-
-    .link-list a {
-      display: inline-block;
-      margin-right: 1rem;
-      font-weight: 600;
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    .link-list a:hover {
-      color: #005fa3;
-      text-decoration: underline;
+      margin-bottom: .5rem;
     }
 
     /* Language Switcher (top-right) */
@@ -128,11 +118,10 @@
       background: #007acc;
       border-radius: var(--switch-h);
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background .3s;
       user-select: none;
     }
 
-    /* Knob (default = left for English) */
     .slider::before {
       content: "";
       position: absolute;
@@ -142,11 +131,10 @@
       bottom: var(--pad);
       background: #fff;
       border-radius: 50%;
-      transition: transform 0.35s;
+      transition: transform .35s;
       will-change: transform;
     }
 
-    /* Edge labels */
     .slider .en,
     .slider .es {
       position: absolute;
@@ -154,24 +142,22 @@
       transform: translateY(-50%);
       font-weight: 700;
       font-size: 12px;
-      color: #ffffff;
-      transition: opacity 0.3s;
+      color: #fff;
+      transition: opacity .3s;
       pointer-events: none;
-      letter-spacing: 0.3px;
+      letter-spacing: .3px;
     }
 
-    /* EN on the left, ES on the right */
     .slider .en {
       left: 8px;
-      opacity: 1;
+      opacity: .5;
     }
 
     .slider .es {
       right: 8px;
-      opacity: 0.5;
+      opacity: 1;
     }
 
-    /* Checked (Spanish): knob moves right; highlight ES, dim EN */
     input:checked+.slider {
       background: #005fa3;
     }
@@ -181,62 +167,36 @@
     }
 
     input:checked+.slider .en {
-      opacity: 0.5;
-    }
-
-    input:checked+.slider .es {
       opacity: 1;
     }
 
-
-    @media (max-width: 600px) {
-      .name {
-        font-size: 2rem;
-      }
-
-      .lang-switch {
-        --switch-w: 52px;
-        --switch-h: 24px;
-        --knob: 18px;
-      }
-
-      .slider .en,
-      .slider .es {
-        font-size: 10px;
-      }
+    input:checked+.slider .es {
+      opacity: .5;
     }
 
-    /* Print styles for clean PDF export */
-    @media print {
-      body {
-        background: #fff;
-        padding: 0;
-      }
-
-      .container {
-        box-shadow: none;
-        padding: 0;
-        max-width: 100%;
-      }
-
-      .lang-switch {
-        display: none !important;
-      }
-
-      a,
-      a:visited {
-        color: #000;
-        text-decoration: none;
-      }
-
-      .section h2 {
-        border-bottom: 1px solid #000;
-      }
+    /* Print button */
+    .print-btn {
+      position: absolute;
+      right: -1px;
+      top: -29px;
+      background: #007acc;
+      border: none;
+      color: #fff;
+      padding: 4px 6px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
     }
 
-    /* Experience layout helpers */
+    .print-btn:hover {
+      background: #005fa3;
+    }
+
+    /* Job helpers */
     .job {
       margin-bottom: 1rem;
+      break-inside: avoid;
     }
 
     .job-header {
@@ -258,18 +218,87 @@
     .job-dates {
       color: #666;
       font-style: italic;
-      font-size: 0.95rem;
+      font-size: .95rem;
     }
 
     .job-desc {
-      margin-top: 0.25rem;
+      margin-top: .25rem;
+    }
+
+    @media (max-width: 600px) {
+      .name {
+        font-size: 2rem;
+      }
+
+      .lang-switch {
+        --switch-w: 52px;
+        --switch-h: 24px;
+        --knob: 18px;
+      }
+
+      .slider .en,
+      .slider .es {
+        font-size: 10px;
+      }
+    }
+
+    /* Print styles for pixel-identical look */
+    @page {
+      size: Letter;
+      margin: 14mm;
+    }
+
+    @media print {
+      .section {
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      .job,
+      .list li {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      html,
+      body {
+        background: #f9fafc;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .container {
+        box-shadow: none;
+        border: 1px solid rgba(0, 0, 0, .12);
+        background: #fff;
+        padding: 18px 20px;
+      }
+
+      .lang-switch,
+      .print-btn {
+        display: none !important;
+      }
+
+      a,
+      a:visited {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .section h2 {
+        border-bottom: 2px solid #007acc;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <!-- Language switch (this page = EN; unchecked should go ES) -->
+    <button class="print-btn" onclick="window.print()">Download PDF</button>
+
+    <!-- Language switch (this page = EN) -->
     <label class="lang-switch" aria-label="Change language">
       <input type="checkbox" id="langToggle" role="switch" aria-checked="true" checked />
       <span class="slider" aria-hidden="true">
@@ -292,7 +321,13 @@
     <section class="section">
       <h2>Professional Profile</h2>
       <p>
-        Specialist in <strong>IT Support</strong>, <strong>web development</strong>, and <strong>graphic design</strong>, with proven experience in system administration, computer maintenance, and database management, as well as the design and development of digital applications. Having lived in the <strong>United States for over XX years</strong>, I possess a strong <strong>bilingual background (Spanish–English C2)</strong> that enables effective performance in multicultural and global environments. I stand out for integrating <strong>artificial intelligence</strong> and <strong>emerging technologies</strong> into projects that optimize processes, strengthen communication, and deliver innovative, efficient solutions.
+        Specialist in <strong>IT Support</strong>, <strong>web development</strong>, and <strong>graphic
+          design</strong>, with proven experience in system administration, computer maintenance, and database
+        management, as well as the design and development of digital applications. Having lived in the <strong>United
+          States for over XX years</strong>, I possess a strong <strong>bilingual background (Spanish–English
+          C2)</strong> that enables effective performance in multicultural and global environments. I stand out for
+        integrating <strong>artificial intelligence</strong> and <strong>emerging technologies</strong> into projects
+        that optimize processes, strengthen communication, and deliver innovative, efficient solutions.
       </p>
     </section>
 
@@ -300,7 +335,11 @@
     <section class="section">
       <h2>Objective</h2>
       <p>
-        Advance my career in <strong>IT Support</strong> and <strong>web development</strong> by applying skills in <strong>programming</strong>, <strong>digital design</strong>, and <strong>AI tools</strong> to build practical, high-impact solutions. I aim to contribute to organizations that value <strong>innovation</strong>, <strong>efficiency</strong>, and <strong>teamwork</strong>, leveraging my bilingual abilities and international experience to add value in corporate and technological settings.
+        Advance my career in <strong>IT Support</strong> and <strong>web development</strong> by applying skills in
+        <strong>programming</strong>, <strong>digital design</strong>, and <strong>AI tools</strong> to build practical,
+        high-impact solutions. I aim to contribute to organizations that value <strong>innovation</strong>,
+        <strong>efficiency</strong>, and <strong>teamwork</strong>, leveraging my bilingual abilities and international
+        experience to add value in corporate and technological settings.
       </p>
     </section>
 
@@ -308,12 +347,18 @@
     <section class="section">
       <h2>Technical Skills</h2>
       <ul class="list">
-        <li><strong>IT Support & Hardware:</strong> Installation, diagnostics, and maintenance of computer systems; network and structured cabling management; troubleshooting and incident resolution.</li>
-        <li><strong>Web Development & Programming:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; dynamic websites and interactive applications; CMS/frameworks (WordPress, Webflow).</li>
-        <li><strong>Graphic Design & UX/UI:</strong> Clean, user-friendly interfaces; proficient with <strong>Photoshop</strong>, <strong>Illustrator</strong>, and <strong>InDesign</strong>.</li>
-        <li><strong>Databases & Backend:</strong> Database modeling and administration; <strong>API</strong> integration and custom management systems.</li>
-        <li><strong>AI & Automation:</strong> Solutions using <strong>ChatGPT</strong>, <strong>DALL·E</strong>, and other <strong>AI</strong> tools for content generation and workflow optimization.</li>
-        <li><strong>Productivity & Collaboration:</strong> GitHub, Trello, VS Code; project management and remote teamwork across disciplines.</li>
+        <li><strong>IT Support & Hardware:</strong> Installation, diagnostics, and maintenance of computer systems;
+          network and structured cabling management; troubleshooting and incident resolution.</li>
+        <li><strong>Web Development & Programming:</strong> HTML5, CSS3, JavaScript, PHP, Python, MySQL; dynamic
+          websites and interactive applications; CMS/frameworks (WordPress, Webflow).</li>
+        <li><strong>Graphic Design & UX/UI:</strong> Clean, user-friendly interfaces; proficient with
+          <strong>Photoshop</strong>, <strong>Illustrator</strong>, and <strong>InDesign</strong>.</li>
+        <li><strong>Databases & Backend:</strong> Database modeling and administration; <strong>API</strong> integration
+          and custom management systems.</li>
+        <li><strong>AI & Automation:</strong> Solutions using <strong>ChatGPT</strong>, <strong>DALL·E</strong>, and
+          other <strong>AI</strong> tools for content generation and workflow optimization.</li>
+        <li><strong>Productivity & Collaboration:</strong> GitHub, Trello, VS Code; project management and remote
+          teamwork across disciplines.</li>
       </ul>
     </section>
 
@@ -330,10 +375,12 @@
           <span class="job-dates">2023–Present</span>
         </div>
         <p class="job-desc">
-          Design and development of <strong>web applications</strong> with integrated <strong>management systems</strong> and process optimization.
+          Design and development of <strong>web applications</strong> with integrated <strong>management
+            systems</strong> and process optimization.
         </p>
         <ul class="list">
-          <li>Built <strong>PWA</strong> apps for local businesses, integrating <strong>frontend</strong> and <strong>backend</strong>.</li>
+          <li>Built <strong>PWA</strong> apps for local businesses, integrating <strong>frontend</strong> and
+            <strong>backend</strong>.</li>
           <li>Designed digital platforms with <strong>databases</strong> and administration panels.</li>
           <li>Automated tasks with <strong>Python</strong> and <strong>JavaScript</strong> to improve efficiency.</li>
         </ul>
@@ -348,11 +395,14 @@
           <span class="job-dates">2008–2012</span>
         </div>
         <p class="job-desc">
-          Provided technical support to corporate and individual clients, managing repairs, warranties, and maintenance of computer systems.
+          Provided technical support to corporate and individual clients, managing repairs, warranties, and maintenance
+          of computer systems.
         </p>
         <ul class="list">
-          <li>Diagnosed and resolved <strong>hardware</strong> and <strong>software</strong> issues, achieving high customer satisfaction.</li>
-          <li>Implemented <strong>structured cabling</strong> and maintained corporate workstations to improve technical efficiency.</li>
+          <li>Diagnosed and resolved <strong>hardware</strong> and <strong>software</strong> issues, achieving high
+            customer satisfaction.</li>
+          <li>Implemented <strong>structured cabling</strong> and maintained corporate workstations to improve technical
+            efficiency.</li>
         </ul>
       </div>
     </section>
@@ -361,7 +411,8 @@
     <section class="section">
       <h2>Education</h2>
       <ul class="list">
-        <li><strong>Continuous Learning (2024–2025):</strong> Fundamentals of AI; Introduction to Programming and Databases.</li>
+        <li><strong>Continuous Learning (2024–2025):</strong> Fundamentals of AI; Introduction to Programming and
+          Databases.</li>
         <li><strong>San Francisco Community College (2015):</strong> Intermediate–Advanced English.</li>
         <li><strong>AB Tech Institute, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
         <li><strong>Charlotte Community College (2005):</strong> Basic English.</li>
@@ -372,76 +423,50 @@
     <!-- Languages -->
     <section class="section">
       <h2>Languages</h2>
-      <p><strong>Spanish:</strong> Native • <strong>English:</strong> C2 (supported by <strong>XX+ years of residence in the U.S.</strong>)</p>
+      <p><strong>Spanish:</strong> Native • <strong>English:</strong> C2 (supported by <strong>XX+ years of residence in
+          the U.S.</strong>)</p>
     </section>
   </div>
 
-    <!-- Portfolio / Links -->
-    <!-- <section class="section">
-      <h2>Portfolio & Links</h2>
-      <div class="link-list">
-        <a href="https://github.com/andfar83" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.behance.net/andresfe" target="_blank" rel="noopener">Behance</a>
-        <a href="https://www.linkedin.com/in/andres-avila-239900324" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="http://www.andfar83.com" target="_blank" rel="noopener">Personal Site</a>
-      </div>
-    </section>
-  </div> -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('langToggle');
+      if (!toggle) return;
 
-    <script>
-      (function () {
-        const toggle = document.getElementById('langToggle');
-        if (!toggle) return;
+      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      const isSpanishDoc = htmlLang.startsWith('es');
+      const isEnglishDoc = htmlLang.startsWith('en');
 
-        // Detect current language from the HTML tag
-        const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-        const isSpanishDoc = htmlLang.startsWith('es');
-        const isEnglishDoc = htmlLang.startsWith('en');
+      const storage = {
+        get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
+        set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
+      };
 
-        // localStorage helpers with guard (some Android WebViews block it on file://)
-        const storage = {
-          get(key) {
-            try { return window.localStorage.getItem(key); } catch { return null; }
-          },
-          set(key, val) {
-            try { window.localStorage.setItem(key, val); } catch { }
-          }
-        };
+      const saved = storage.get('lang');
+      const wantEnglish = saved ? saved === 'en' : isEnglishDoc;
+      toggle.checked = wantEnglish;
+      toggle.setAttribute('aria-checked', wantEnglish ? 'true' : 'false');
 
-        // Initialize toggle state from storage, else from the actual page lang
-        const saved = storage.get('lang');
-        const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
-        toggle.checked = wantSpanish;
-        toggle.setAttribute('aria-checked', wantSpanish ? 'true' : 'false');
-
-        // If a pref exists but doesn't match this page, redirect to the counterpart
-        if (saved) {
-          const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
-          if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
-            // Build robust path: keep current directory, swap filename
-            const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
-            location.href = base + targetName;
-            return;
-          }
-        }
-
-        // On change, persist and go to the other file (keeping directory)
-        toggle.addEventListener('change', () => {
-          const lang = toggle.checked ? 'es' : 'en';
-          toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
-          storage.set('lang', lang);
-
-          const targetName = lang === 'es' ? 'index.html' : 'index-eng.html';
+      if (saved) {
+        const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
+        if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
           const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
           location.href = base + targetName;
-        });
-      })();
-    </script>
+          return;
+        }
+      }
 
+      toggle.addEventListener('change', () => {
+        const lang = toggle.checked ? 'en' : 'es';
+        toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
+        storage.set('lang', lang);
+
+        const targetName = lang === 'en' ? 'index-eng.html' : 'index.html';
+        const base = location.href.substring(0, location.href.lastIndexOf('/') + 1);
+        location.href = base + targetName;
+      });
+    })();
+  </script>
 </body>
 
 </html>
-
-
-
-
