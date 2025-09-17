@@ -3,15 +3,18 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>CV – Andrés Felipe Ávila Rincón</title>
+  <title>Resume – Andrés Felipe Ávila Rincón</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Andrés Felipe Ávila Rincón — IT Support, web development, graphic design and AI tools." />
+    content="Andrés Felipe Ávila Rincón — IT Support, web development, graphic design, and AI tools." />
   <meta name="theme-color" content="#007acc" />
   <meta name="msapplication-navbutton-color" content="#007acc" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -205,11 +208,10 @@
       opacity: 1;
     }
 
-    /* Certificados button: same style as .print-btn, just shifted left */
+    /* Buttons */
     .cert-btn {
       position: absolute;
       right: 112px;
-      /* move left so it doesn't overlap the PDF button */
       top: -29px;
       background: #007acc;
       border: none;
@@ -221,13 +223,6 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
     }
 
-    @media print {
-      .cert-btn {
-        display: none !important;
-      }
-    }
-
-    /* Print button */
     .print-btn {
       position: absolute;
       right: -1px;
@@ -271,7 +266,8 @@
       }
 
       .lang-switch,
-      .print-btn {
+      .print-btn,
+      .cert-btn {
         display: none !important;
       }
 
@@ -301,12 +297,13 @@
 
 <body>
   <div class="container">
-    <!-- Button to download certificates -->
+    <!-- Buttons -->
     <button class="cert-btn" onclick="downloadCertificates()">Certificates</button>
     <button class="print-btn" onclick="window.print()">Download PDF</button>
 
     <!-- Language Switch (EN page) -->
-    <label class="lang-switch" aria-label="Change language">
+    <label class="lang-switch" aria-label="Switch language">
+      <!-- On EN page, default is UNCHECKED (English). JS still respects localStorage + redirects) -->
       <input type="checkbox" id="langToggle" role="switch" aria-checked="false" />
       <span class="slider" aria-hidden="true">
         <span class="en">EN</span>
@@ -321,7 +318,7 @@
         Ibagué, Colombia •
         <a href="mailto:andresfar83@outlook.com">andresfar83@outlook.com</a> •
         <a href="tel:+573117672595">+57 311 767 2595</a> •
-        Willing to travel: <span style="color:#007acc; font-weight:600;">Yes</span>
+        Travel availability: <span style="color:#007acc; font-weight:600;">Yes</span>
       </p>
     </header>
 
@@ -329,44 +326,41 @@
     <section class="section">
       <h2>Professional Profile</h2>
       <p>
-        <strong>Specialist in Technical Support, web development, and graphic design</strong>, experienced in
-        system maintenance, database management, and digital application development.
-        Over <strong>20 years in the U.S.</strong> support my <strong>bilingual Spanish–English (C2)</strong>
-        proficiency
-        and ability to excel in multicultural environments. I apply <strong>AI and emerging technologies</strong>
-        to optimize processes, strengthen communication, and deliver <strong>innovative, effective solutions</strong>.
+        <strong>IT Support specialist, web developer, and graphic designer</strong> with experience in systems
+        maintenance, database management, and building digital applications. Over
+        <strong>20 years in the United States</strong> support my <strong>bilingual Spanish–English (C2)</strong>
+        proficiency and ability to perform in multicultural settings. I integrate
+        <strong>AI and emerging technologies</strong> to streamline processes, strengthen communication, and deliver
+        <strong>innovative, effective solutions</strong>.
       </p>
     </section>
-
 
     <!-- Objective -->
     <section class="section">
       <h2>Objective</h2>
       <p>
-        Contribute to the growth of organizations that value technological innovation by applying my experience in
-        <strong>Technical Support, web development, and digital design</strong>.
-        My goal is to <strong>drive digital projects</strong> that strategically integrate
-        <strong>artificial intelligence</strong>, optimize processes, strengthen communication, and deliver
-        <strong>creative, efficient, and impactful solutions</strong> in corporate and multicultural environments.
+        Contribute to organizations that value technological innovation by applying my experience in
+        <strong>IT Support, web development, and digital design</strong>. My goal is to
+        <strong>drive digital projects</strong> that strategically leverage <strong>artificial intelligence</strong>,
+        optimize processes, improve communication, and generate
+        <strong>creative, efficient, high-impact solutions</strong> in corporate environments.
       </p>
     </section>
-
 
     <!-- Technical Skills -->
     <section class="section">
       <h2>Technical Skills</h2>
       <ul class="list">
-        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, responsive design, UX/UI.</li>
-        <li><strong>Backend & Databases:</strong> PHP, Python, MySQL, API integration, management systems.</li>
-        <li><strong>IT Support & Hardware:</strong> Installation, diagnostics, maintenance; networks and structured
-          cabling.</li>
-        <li><strong>Design & Digital Production:</strong> Photoshop, Illustrator, InDesign, photography, video editing.
-        </li>
-        <li><strong>Artificial Intelligence & Creative Development:</strong> Use of ChatGPT, DALL·E, and creation of
-          games and applications with Python and JavaScript.</li>
+        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, responsive design, and UX/UI.</li>
+        <li><strong>Backend & Databases:</strong> PHP, Python, MySQL, API integrations, and management systems.</li>
+        <li><strong>IT Support & Hardware:</strong> Installation, diagnostics, and maintenance of computer systems;
+          networking and structured cabling.</li>
+        <li><strong>Design & Digital Production:</strong> Photoshop, Illustrator, InDesign, photography, and video
+          editing.</li>
+        <li><strong>Artificial Intelligence & Creative Dev:</strong> ChatGPT, DALL·E, and building games/apps with
+          Python and JavaScript.</li>
         <li><strong>Productivity & AI Tools:</strong> GitHub, VS Code, <strong>N8N</strong>, <strong>Claude</strong>,
-          <strong>Cursor</strong>.
-        </li>
+          <strong>Cursor</strong>.</li>
       </ul>
     </section>
 
@@ -383,15 +377,14 @@
           <span class="job-dates">2023–Present</span>
         </div>
         <p class="job-desc">
-          Design and development of <strong>web applications</strong> with integrated <strong>management
-            systems</strong>.
+          Design and development of <strong>web applications</strong> with <strong>management systems</strong>
+          integration.
         </p>
         <ul class="list">
-          <li>Built <strong>PWA</strong> apps for local businesses, integrating frontend and backend.</li>
-          <li>Created <strong>games and applications</strong> with <strong>Python</strong> and
-            <strong>JavaScript</strong>.
+          <li>Built <strong>PWAs</strong> for local businesses with both frontend and backend.</li>
+          <li>Developed <strong>games and apps</strong> using <strong>Python</strong> and <strong>JavaScript</strong>.
           </li>
-          <li>Designed platforms with <strong>databases</strong> and admin panels.</li>
+          <li>Designed platforms with <strong>databases</strong> and admin dashboards.</li>
         </ul>
       </div>
 
@@ -404,33 +397,26 @@
           <span class="job-dates">2020–2025</span>
         </div>
         <p class="job-desc">
-          Responsible for <strong>audio/video pre-editing</strong>, <strong>audio recording</strong>, on-set assistance,
-          <strong>equipment cabling</strong>, and <strong>set lighting</strong>, as well as related production duties.
+          Support in <strong>pre-editing audio/video</strong>, recordings, and on-set assistance.
+          Managed <strong>cabling, microphones, and lighting</strong> to ensure efficient technical workflows in
+          audiovisual productions.
         </p>
-        <ul class="list">
-          <li>Supported <strong>session prep</strong>, microphones, and signal flow.</li>
-          <li>On-set assistance: setup, organization, and <strong>lighting control</strong>.</li>
-          <li><strong>Cabled</strong> and organized audio, video, and power equipment for shoots and sessions.</li>
-          <li>Contributed to <strong>pre-editing</strong> (selecting, cleaning, and organizing footage/audio).</li>
-        </ul>
       </div>
-
 
       <div class="job">
         <div class="job-header">
           <div>
             <span class="job-title">Freelance</span>
-            <span class="job-org">— Photography, Web & Digital Design, San Francisco Bay Area</span>
+            <span class="job-org">— Photography, Design & Digital Production, San Francisco Bay Area</span>
           </div>
           <span class="job-dates">2013–2019</span>
         </div>
         <p class="job-desc">
-          Independent photography, design, and multimedia projects.
+          <strong>Independent projects</strong> in photography, design, and audiovisual production.
         </p>
         <ul class="list">
-          <li><strong>Airbnb promotional photography</strong> and personal projects.</li>
-          <li><strong>Drone (aerial) photography</strong>.</li>
-          <li><strong>Web and graphic design</strong>, video editing and production for local clients.</li>
+          <li><strong>Drone aerial photography</strong>.</li>
+          <li><strong>Web and graphic design</strong>, plus video editing/production for local clients.</li>
         </ul>
       </div>
 
@@ -443,11 +429,11 @@
           <span class="job-dates">2008–2012</span>
         </div>
         <p class="job-desc">
-          Provided technical support for corporate and individual clients.
+          Technical support for corporate and individual customers.
         </p>
         <ul class="list">
-          <li>Diagnosed and resolved <strong>hardware</strong> and <strong>software</strong> issues.</li>
-          <li>Implemented <strong>structured cabling</strong> and maintained workstations.</li>
+          <li>Diagnosed and resolved <strong>hardware</strong> and <strong>software</strong> incidents.</li>
+          <li>Organized <strong>structured cabling</strong> and maintained workstations.</li>
         </ul>
       </div>
     </section>
@@ -456,38 +442,60 @@
     <section class="section">
       <h2>Education</h2>
       <ul class="list">
-        <li><strong>Continuous Learning (2024–2025):</strong> Applied AI, fundamentals of programming and databases.
-        </li>
-        <li><strong>San Francisco Community College (2015):</strong> Intermediate–Advanced English.</li>
+        <li><strong>AB Tech Institute, Asheville, NC (2024–2025):</strong> Applied AI, programming fundamentals, and
+          databases.</li>
+        <li><strong>San Francisco Community College (2015):</strong> Upper-intermediate English.</li>
         <li><strong>AB Tech Institute, Asheville, NC (2008):</strong> Dreamweaver, InDesign, Photoshop.</li>
         <li><strong>Charlotte Community College (2005):</strong> Basic English.</li>
-        <li><strong>High School Diploma — Externado Popular, Ibagué (1999).</strong></li>
+        <li><strong>High School — Externado Popular Bachillerato, Ibagué (1999).</strong></li>
       </ul>
     </section>
 
     <!-- Languages -->
     <section class="section">
       <h2>Languages</h2>
-      <p><strong>Spanish:</strong> Native • <strong>English:</strong> C2 (20+ years in the U.S.)</p>
+      <p><strong>Spanish:</strong> Native • <strong>English:</strong> C2 (20+ years of residence in the U.S.)</p>
     </section>
   </div>
 
   <script>
+    function downloadCertificates() {
+      const files = [
+        { href: 'certificado-1.png', name: 'certificate-1.png' },
+        { href: 'certificado-2.png', name: 'certificate-2.png' }
+      ];
+      files.forEach((f, i) => {
+        setTimeout(() => {
+          const a = document.createElement('a');
+          a.href = f.href;
+          a.setAttribute('download', f.name);
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        }, i * 250);
+      });
+    }
+
     (function () {
       const toggle = document.getElementById('langToggle');
       if (!toggle) return;
+
       const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
       const isSpanishDoc = htmlLang.startsWith('es');
       const isEnglishDoc = htmlLang.startsWith('en');
+
       const storage = {
         get(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
         set(key, val) { try { window.localStorage.setItem(key, val); } catch { } }
       };
-      const saved = storage.get('lang');
+
+      const saved = storage.get('lang'); // 'es' or 'en'
+      // On first load (no saved), default to current doc language
       const wantSpanish = saved ? saved === 'es' : isSpanishDoc;
       toggle.checked = wantSpanish;
       toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
 
+      // If there's a saved preference and we're on the wrong page, redirect.
       if (saved) {
         const targetName = saved === 'es' ? 'index.html' : 'index-eng.html';
         if ((saved === 'es' && !isSpanishDoc) || (saved === 'en' && !isEnglishDoc)) {
@@ -497,6 +505,7 @@
         }
       }
 
+      // When toggling, persist and jump between ES/EN files.
       toggle.addEventListener('change', () => {
         const lang = toggle.checked ? 'es' : 'en';
         toggle.setAttribute('aria-checked', toggle.checked ? 'true' : 'false');
